@@ -13,6 +13,7 @@ public class PlayerControl : MonoBehaviour {
     private Collider collider;
     float disToGround;
     public GameObject bullet;
+    public GameObject fireBullet;
     public int bulletForce = 100;
 
     [SerializeField] Gravity gravity;
@@ -113,19 +114,39 @@ public class PlayerControl : MonoBehaviour {
 
         if(Input.GetMouseButtonDown(0))
         {
-            //spawn bullet when left click
-            Vector3 pos = transform.position;
-            if (direction == Direction.right) // shoot bullet to the right
+            if (bulletType == Bullet.normal)
             {
-                GameObject spawnedBullet = Instantiate(bullet, new Vector3(pos.x + 0.5f, pos.y, pos.z), Quaternion.identity);
-                //apply force to bullet
-                spawnedBullet.GetComponent<Rigidbody>().AddForce(Vector3.right * bulletForce);
+                //spawn bullet when left click
+                Vector3 pos = transform.position;
+                if (direction == Direction.right) // shoot bullet to the right
+                {
+                    GameObject spawnedBullet = Instantiate(bullet, new Vector3(pos.x + 0.5f, pos.y, pos.z), Quaternion.identity);
+                    //apply force to bullet
+                    spawnedBullet.GetComponent<Rigidbody>().AddForce(Vector3.right * bulletForce);
+                }
+                else // shoot bullet to the left
+                {
+                    GameObject spawnedBullet = Instantiate(bullet, new Vector3(pos.x - 0.5f, pos.y, pos.z), Quaternion.identity);
+                    //apply force to bullet
+                    spawnedBullet.GetComponent<Rigidbody>().AddForce(Vector3.left * bulletForce);
+                }
             }
-            else // shoot bullet to the left
+            else
             {
-                GameObject spawnedBullet = Instantiate(bullet, new Vector3(pos.x - 0.5f, pos.y, pos.z), Quaternion.identity);
-                //apply force to bullet
-                spawnedBullet.GetComponent<Rigidbody>().AddForce(Vector3.left * bulletForce);
+                //spawn bullet when left click
+                Vector3 pos = transform.position;
+                if (direction == Direction.right) // shoot bullet to the right
+                {
+                    GameObject spawnedBullet = Instantiate(fireBullet, new Vector3(pos.x + 0.5f, pos.y, pos.z), Quaternion.identity);
+                    //apply force to bullet
+                    spawnedBullet.GetComponent<Rigidbody>().AddForce(Vector3.right * bulletForce);
+                }
+                else // shoot bullet to the left
+                {
+                    GameObject spawnedBullet = Instantiate(fireBullet, new Vector3(pos.x - 0.5f, pos.y, pos.z), Quaternion.identity);
+                    //apply force to bullet
+                    spawnedBullet.GetComponent<Rigidbody>().AddForce(Vector3.left * bulletForce);
+                }
             }
         }
     }
@@ -133,7 +154,6 @@ public class PlayerControl : MonoBehaviour {
     void BulletToFire()
     {
         bulletType = Bullet.fire;
-        Debug.Log("fire");
     }
 
    

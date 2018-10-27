@@ -12,7 +12,7 @@ public class BulletController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        gameObject.SendMessage("BulletToFire");
+        
         Destroy(gameObject);
     }
 }

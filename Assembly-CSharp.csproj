@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\FireController.cs" />
     <Compile Include="Assets\Scripts\Gravity.cs" />
     <Compile Include="Assets\Scripts\PlayerControl.cs" />
+    <Compile Include="Assets\Scripts\WoodController.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/jacka/OneDrive/Documents/Gravity/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

@@ -4,18 +4,10 @@ using UnityEngine;
 
 public class FireController : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public GameObject player;
 
     private void OnTriggerEnter(Collider other)
     {
-        other.SendMessage("BulletToFire");
+        player.SendMessage("BulletToFire");
     }
 }
