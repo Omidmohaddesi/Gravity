@@ -9,26 +9,34 @@ public class PlayerControl : MonoBehaviour {
 
     private float h;
     private bool isGrounded = true;
-    private Rigidbody rb;
-    private Collider coll;
+    private Rigidbody rigidBody;
+    private Collider collider;
     float disToGround;
+    public GameObject bullet;
+    public int bulletForce = 100;
 
     [SerializeField] Gravity gravity;
 
+    enum Direction { left, right};
+    Direction direction = Direction.right;
+
+    enum Bullet { normal, fire };
+    Bullet bulletType = Bullet.normal;
 
 
-	// Use this for initialization
-	void Start () {
-        rb = GetComponent<Rigidbody>();
-        coll = GetComponent<Collider>();
-        disToGround = coll.bounds.extents.y;
+
+    // Use this for initialization
+    void Start () {
+        rigidBody = GetComponent<Rigidbody>();
+        collider = GetComponent<Collider>();
+        disToGround = collider.bounds.extents.y;
     }
 	
 
     public bool GroundCheck()
     {
         //When gravity is NOT reversed
-        if (gravity.isGravityReversed == false)
+        if (gravity.gravityState == Gravity.gravity.normal)
         {
             if (Physics.Raycast(transform.position, -Vector3.up, disToGround + 0.1f))
             {
@@ -39,7 +47,7 @@ public class PlayerControl : MonoBehaviour {
         else
 
         //When gravity IS reversed
-        if (gravity.isGravityReversed == true)
+        if (gravity.gravityState == Gravity.gravity.reversed)
         {
             if (Physics.Raycast(transform.position, Vector3.up, disToGround + 0.1f))
             {
@@ -59,17 +67,21 @@ public class PlayerControl : MonoBehaviour {
 
     void Update () {
         transform.position += Vector3.right * (Input.GetAxis("Horizontal")) * speed;
-    
+        if (Input.GetKeyDown(KeyCode.A))
+            direction = Direction.left;
+        if (Input.GetKeyDown(KeyCode.D))
+            direction = Direction.right;
+
         //Reverse Gravity
         if (Input.GetKeyDown(KeyCode.Z) && GroundCheck())
         {
-            if (gravity.isGravityReversed == false)
+            if (gravity.gravityState == Gravity.gravity.normal)
             {
-                gravity.isGravityReversed = true;
+                gravity.gravityState = Gravity.gravity.reversed;
             }
-            else if (gravity.isGravityReversed == true)
+            else if (gravity.gravityState == Gravity.gravity.reversed)
             {
-                gravity.isGravityReversed = false;
+                gravity.gravityState = Gravity.gravity.normal;
             }           
         }
 
@@ -85,19 +97,43 @@ public class PlayerControl : MonoBehaviour {
             {
                 isGrounded = false;   //Player's jumping now! cannot jump again
 
-                if (gravity.isGravityReversed == false)
+                if (gravity.gravityState == Gravity.gravity.normal)
                 {
-                    rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+                    rigidBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 
                 }
-                else if (gravity.isGravityReversed == true)
+                else if (gravity.gravityState == Gravity.gravity.reversed)
                 {
-                    rb.AddForce(Vector3.down * jumpForce, ForceMode.Impulse);
+                    rigidBody.AddForce(Vector3.down * jumpForce, ForceMode.Impulse);
                 }
             }
             
             
         }
+
+        if(Input.GetMouseButtonDown(0))
+        {
+            //spawn bullet when left click
+            Vector3 pos = transform.position;
+            if (direction == Direction.right) // shoot bullet to the right
+            {
+                GameObject spawnedBullet = Instantiate(bullet, new Vector3(pos.x + 0.5f, pos.y, pos.z), Quaternion.identity);
+                //apply force to bullet
+                spawnedBullet.GetComponent<Rigidbody>().AddForce(Vector3.right * bulletForce);
+            }
+            else // shoot bullet to the left
+            {
+                GameObject spawnedBullet = Instantiate(bullet, new Vector3(pos.x - 0.5f, pos.y, pos.z), Quaternion.identity);
+                //apply force to bullet
+                spawnedBullet.GetComponent<Rigidbody>().AddForce(Vector3.left * bulletForce);
+            }
+        }
+    }
+
+    void BulletToFire()
+    {
+        bulletType = Bullet.fire;
+        Debug.Log("fire");
     }
 
    

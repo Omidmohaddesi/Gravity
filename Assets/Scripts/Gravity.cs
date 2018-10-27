@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Gravity : MonoBehaviour {
 
-    public bool isGravityReversed = false;
+    public enum gravity { normal,reversed};
+    public gravity gravityState;
 
 	// Use this for initialization
 	void Start () {
@@ -13,9 +14,9 @@ public class Gravity : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (isGravityReversed == true)
+        if (gravityState == gravity.reversed)
         {
-            GetComponent<Rigidbody>().AddForce(Vector3.up * 9.8f * 2 * GetComponent<Rigidbody>().mass);
+            GetComponent<Rigidbody>().AddForce(Vector3.up * 9.8f * GetComponent<Rigidbody>().mass);
         }
         
 	}
