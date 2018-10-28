@@ -5361,6 +5361,21 @@ Prefab:
       propertyPath: Character_animator
       value: 
       objectReference: {fileID: 629692122}
+    - target: {fileID: 20834352030868936, guid: e504cc02bbf1bc84c93a4412d34af173,
+        type: 2}
+      propertyPath: m_BackGroundColor.r
+      value: 0.19215688
+      objectReference: {fileID: 0}
+    - target: {fileID: 20834352030868936, guid: e504cc02bbf1bc84c93a4412d34af173,
+        type: 2}
+      propertyPath: m_BackGroundColor.g
+      value: 0.46310395
+      objectReference: {fileID: 0}
+    - target: {fileID: 20834352030868936, guid: e504cc02bbf1bc84c93a4412d34af173,
+        type: 2}
+      propertyPath: m_BackGroundColor.b
+      value: 0.4745098
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 33973701256774346, guid: e504cc02bbf1bc84c93a4412d34af173, type: 2}
     - {fileID: 23460823640444302, guid: e504cc02bbf1bc84c93a4412d34af173, type: 2}
