@@ -14,7 +14,10 @@ public class PlayerControl : MonoBehaviour {
     float disToGround;
     public GameObject bullet;
     public GameObject fireBullet;
+    public Transform CharacterSprite;
     public int bulletForce = 100;
+
+    public Animator Character_animator;
 
     [SerializeField] Gravity gravity;
 
@@ -69,19 +72,41 @@ public class PlayerControl : MonoBehaviour {
     void Update () {
         transform.position += Vector3.right * (Input.GetAxis("Horizontal")) * speed;
         if (Input.GetKeyDown(KeyCode.A))
+        {
             direction = Direction.left;
-        if (Input.GetKeyDown(KeyCode.D))
-            direction = Direction.right;
+            if (gravity.gravityState==Gravity.gravity.normal) // updating sprite direction *Frank
+            {
+                CharacterSprite.localScale = new Vector3(1, CharacterSprite.localScale.y, CharacterSprite.localScale.z); 
+            }
+            else
+            {
+                CharacterSprite.localScale = new Vector3(-1, CharacterSprite.localScale.y, CharacterSprite.localScale.z);
+            }
 
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            direction = Direction.right;
+            if (gravity.gravityState == Gravity.gravity.normal) // updating sprite direction *Frank
+            {
+                CharacterSprite.localScale = new Vector3(-1, CharacterSprite.localScale.y, CharacterSprite.localScale.z);
+            }
+            else
+            {
+                CharacterSprite.localScale = new Vector3(1, CharacterSprite.localScale.y, CharacterSprite.localScale.z);
+            }
+        }
         //Reverse Gravity
         if (Input.GetKeyDown(KeyCode.Z) && GroundCheck())
         {
             if (gravity.gravityState == Gravity.gravity.normal)
             {
+                Character_animator.SetBool("Character_reversed", true); // checking for reverse animation *Frank
                 gravity.gravityState = Gravity.gravity.reversed;
             }
             else if (gravity.gravityState == Gravity.gravity.reversed)
             {
+                Character_animator.SetBool("Character_reversed", false); // checking for reverse animation *Frank
                 gravity.gravityState = Gravity.gravity.normal;
             }           
         }
@@ -122,7 +147,7 @@ public class PlayerControl : MonoBehaviour {
                 {
                     GameObject spawnedBullet = Instantiate(bullet, new Vector3(pos.x + 0.5f, pos.y, pos.z), Quaternion.identity);
                     //apply force to bullet
-                    spawnedBullet.GetComponent<Rigidbody>().AddForce(Vector3.right * bulletForce);
+                    spawnedBullet.GetComponent<Rigidbody>().AddForce(Vector3.right * bulletForce);                   
                 }
                 else // shoot bullet to the left
                 {
