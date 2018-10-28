@@ -35,6 +35,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4061658649905084}
+  - component: {fileID: 136336415191672442}
+  - component: {fileID: 114175823965796672}
   m_Layer: 0
   m_Name: Bonfire
   m_TagString: Untagged
@@ -66,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1052554047785972}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 17.52, y: 6.56, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 4903733218766132}
@@ -81,8 +83,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1771774448606048}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.09, y: 2.32, z: -0.77}
-  m_LocalScale: {x: 0.8875, y: 1, z: 1.7}
+  m_LocalPosition: {x: 0.08, y: 2.11, z: -0.12}
+  m_LocalScale: {x: 1.07, y: 1, z: 1.7}
   m_Children: []
   m_Father: {fileID: 4061658649905084}
   m_RootOrder: 1
@@ -94,12 +96,39 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1052051552722408}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.03, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4061658649905084}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114175823965796672
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1052554047785972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688a5d401adb9d740a1fc71ac813279e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  createdFire: {fileID: 1253947448853206, guid: de0d40f271cc860469264322e8d9fd42,
+    type: 2}
+  emittingFireCD: 2
+--- !u!136 &136336415191672442
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1052554047785972}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.69
+  m_Height: 4.08
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.92, z: 0}
 --- !u!198 &198800435635053440
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -4669,7 +4698,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -4724,7 +4753,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 19c95d775e35bf04daf55285edda7d7e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

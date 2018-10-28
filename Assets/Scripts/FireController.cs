@@ -6,7 +6,7 @@ public class FireController : MonoBehaviour {
 
     public bool isGravityReversed = false;
     public float lifeTime = 15.0f;
-    public float speed = 1.0f;
+    public float speed = 2.0f;
 
     private Rigidbody rb;
  
@@ -24,11 +24,11 @@ public class FireController : MonoBehaviour {
     {
         if (isGravityReversed)
         {
-            rb.velocity = (Vector3.up * speed * (-1));
+            rb.AddForce(Vector3.up * speed * (-1));
         }
         else
         {
-            rb.velocity = (Vector3.up * speed * (1));
+            rb.AddForce(Vector3.up * speed * (1));
         }
     }
 

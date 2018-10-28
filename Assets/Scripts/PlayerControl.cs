@@ -18,6 +18,12 @@ public class PlayerControl : MonoBehaviour
     public Transform CharacterSprite;
     public float bulletForce = 100.0f;
     public GameObject FirePos;
+    public GameObject SEJump;
+
+
+    private ParticleSystem seJumpPS;
+
+
 
     public Animator Character_animator;
 
@@ -33,6 +39,7 @@ public class PlayerControl : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
         collider = GetComponent<Collider>();
         disToGround = collider.bounds.extents.y;
+        seJumpPS = SEJump.GetComponent<ParticleSystem>();
     }
 
 
@@ -112,12 +119,13 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
 
-
+            
             isGrounded = GroundCheck();
 
             if (isGrounded)   //If player is in the air, cannot jump
             {
                 isGrounded = false;   //Player's jumping now! cannot jump again
+                seJumpPS.Play();
 
                 if (gravity.gravityState == Gravity.gravity.normal)
                 {

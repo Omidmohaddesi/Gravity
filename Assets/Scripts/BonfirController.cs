@@ -22,8 +22,11 @@ public class BonfirController : MonoBehaviour {
             {
                 isInCD = true;
                 GameObject spawnedFire1 = Instantiate(createdFire, new Vector3(pos.x + 0.3f, pos.y, pos.z), Quaternion.identity);
+                spawnedFire1.GetComponent<Rigidbody>().velocity = Vector3.right * 0.7f;
                 GameObject spawnedFire2 = Instantiate(createdFire, new Vector3(pos.x - 0.3f, pos.y, pos.z), Quaternion.identity);
+                spawnedFire2.GetComponent<Rigidbody>().velocity = Vector3.right * -0.7f;
                 GameObject spawnedFire3 = Instantiate(createdFire, new Vector3(pos.x + 0.0f, pos.y, pos.z), Quaternion.identity);
+                spawnedFire3.GetComponent<Rigidbody>().velocity = Vector3.right * 0.0f;
                 StartCoroutine(EmittingFireCD());
             }
            
