@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour {
 
+    public float lifeTime = 5.0f;
+    
 
-    private void OnCollisionEnter(Collision collision)
+    private void Start()
     {
-        Destroy(gameObject);
+        //lifetime timer
+        StartCoroutine(startLifeTime());
     }
-
-    private void OnTriggerEnter(Collider other)
+    
+    IEnumerator startLifeTime ()
     {
-        
-        Destroy(gameObject);
+        yield return (new WaitForSeconds(lifeTime));
+        if (this.gameObject != null)
+        {
+            Destroy(gameObject);
+        }
     }
 }
