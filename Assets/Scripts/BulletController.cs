@@ -5,14 +5,14 @@ using UnityEngine;
 public class BulletController : MonoBehaviour {
 
     public float lifeTime = 5.0f;
-    
 
     private void Start()
     {
         //lifetime timer
         StartCoroutine(startLifeTime());
     }
-    
+
+
     IEnumerator startLifeTime ()
     {
         yield return (new WaitForSeconds(lifeTime));
@@ -21,4 +21,6 @@ public class BulletController : MonoBehaviour {
             Destroy(gameObject);
         }
     }
+
+
 }

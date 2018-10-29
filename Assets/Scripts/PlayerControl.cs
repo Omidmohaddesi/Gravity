@@ -74,6 +74,12 @@ public class PlayerControl : MonoBehaviour
     void Update()
     {
         transform.position += Vector3.right * (Input.GetAxis("Horizontal")) * speed;
+        if ((Input.GetAxis("Horizontal") > -0.1f) && Input.GetAxis("Horizontal") < 0.1f)
+        {
+            Character_animator.SetBool("Character_walking", false);
+        }
+        else Character_animator.SetBool("Character_walking", true);
+
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             direction = Direction.left;
