@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-
+    
     public float speed = 0.5f;
     public float jumpForce = 3.0f;
     public float bulletSratingSpeed = 5.0f;
+
+    //graviton variants
+    [SerializeField] public GameObject gravitonAreaPrefab;
+    private GameObject gravitonArea;
+    private bool isGravityAreaActive = false;
 
     private float h;
     private bool isGrounded = true;
     private Rigidbody rigidBody;
     private Collider collider;
-    float disToGround;
+    private float disToGround;
     public GameObject bullet;
     public Transform CharacterSprite;
     public float bulletForce = 100.0f;
@@ -40,6 +45,11 @@ public class PlayerControl : MonoBehaviour
         collider = GetComponent<Collider>();
         disToGround = collider.bounds.extents.y;
         seJumpPS = SEJump.GetComponent<ParticleSystem>();
+
+        //instantiate gravitonArea for pernament use in this level.
+        gravitonArea = Instantiate(gravitonAreaPrefab, this.transform.position, Quaternion.identity);
+        gravitonArea.SetActive(false);
+
     }
 
 
@@ -105,7 +115,8 @@ public class PlayerControl : MonoBehaviour
                 CharacterSprite.localScale = new Vector3(1, CharacterSprite.localScale.y, CharacterSprite.localScale.z);
             }
         }
-        //Reverse Gravity
+        //Reverse Gravity: discarded. Now we use Graviton Area
+        /*
         if (Input.GetKeyDown(KeyCode.Z) && GroundCheck())
         {
             if (gravity.gravityState == Gravity.gravity.normal)
@@ -119,7 +130,7 @@ public class PlayerControl : MonoBehaviour
                 gravity.gravityState = Gravity.gravity.normal;
             }
         }
-
+        */
 
         //Jump
         if (Input.GetKeyDown(KeyCode.Space))
@@ -147,9 +158,11 @@ public class PlayerControl : MonoBehaviour
 
         }
 
+        //Gravity Energy Ball
+        /*
         if (Input.GetKeyDown(KeyCode.X))
         {
-            //spawn bullet when left click
+            
             Vector3 pos = FirePos.transform.position;
             if (direction == Direction.right) // shoot bullet to the right
             {
@@ -164,6 +177,29 @@ public class PlayerControl : MonoBehaviour
                 spawnedBullet.GetComponent<Rigidbody>().velocity = Vector3.left * bulletSratingSpeed;
             }
         }
+        */
+
+        //Graviton Area
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            if (isGravityAreaActive == true)
+            {
+                isGravityAreaActive = false;
+                gravitonArea.SetActive(false);
+            }
+            else if (isGravityAreaActive == false)
+            {
+                if (GroundCheck())
+                {
+                    isGravityAreaActive = true;
+                    gravitonArea.SetActive(true);
+                    gravitonArea.transform.position = this.transform.position;
+
+                }
+                else return;
+            }
+        }
+
     }
 
 }

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - GEB
   - Fire
+  - fire bullet
+  - Graviton
   layers:
   - Default
   - TransparentFX
