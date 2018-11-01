@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BonfirController.cs" />
+    <Compile Include="Assets\Scripts\BoundartWall.cs" />
     <Compile Include="Assets\Scripts\BulletController.cs" />
     <Compile Include="Assets\Scripts\FireController.cs" />
     <Compile Include="Assets\Scripts\GravitonEffect.cs" />
