@@ -6,35 +6,36 @@ using UnityEngine.SceneManagement;
 public class PlayerControl : MonoBehaviour
 {
     
+    //basic setting
     public float speed = 0.5f;
     public float jumpForce = 3.0f;
-    public float bulletSratingSpeed = 5.0f;
+    //public float bulletSratingSpeed = 5.0f;
+    //public GameObject bullet;
+    //public float bulletForce = 100.0f;
+    public GameObject FirePos;
 
     //graviton variants
     [SerializeField] public GameObject gravitonAreaPrefab;
     private GameObject gravitonArea;
     private bool isGravityAreaActive = false;
 
+    public Animator Character_animator;
+    public Transform CharacterSprite;
+
+
+    public GameObject SEJump;
+
+
+    //private variants
     private float h;
     private bool isGrounded = true;
     private Rigidbody rigidBody;
     private Collider collider;
     private float disToGround;
-    public GameObject bullet;
-    public Transform CharacterSprite;
-    public float bulletForce = 100.0f;
-    public GameObject FirePos;
-    public GameObject SEJump;
-
-
     private ParticleSystem seJumpPS;
-
-
-
-    public Animator Character_animator;
+    private bool isChanting = false;
 
     [SerializeField] Gravity gravity;
-
     enum Direction { left, right };
     Direction direction = Direction.right;
 
@@ -84,14 +85,19 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
-        transform.position += Vector3.right * (Input.GetAxis("Horizontal")) * speed;
+
+        if (isChanting == false)
+        {
+            transform.position += Vector3.right * (Input.GetAxis("Horizontal")) * speed;
+        }
+        
         if ((Input.GetAxis("Horizontal") > -0.1f) && Input.GetAxis("Horizontal") < 0.1f)
         {
             Character_animator.SetBool("Character_walking", false);
         }
         else Character_animator.SetBool("Character_walking", true);
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && (isChanting == false))
         {
             direction = Direction.left;
             if (gravity.gravityState == Gravity.gravity.normal) // updating sprite direction *Frank
@@ -104,7 +110,7 @@ public class PlayerControl : MonoBehaviour
             }
 
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow) && (isChanting == false))
         {
             direction = Direction.right;
             if (gravity.gravityState == Gravity.gravity.normal) // updating sprite direction *Frank
@@ -134,7 +140,7 @@ public class PlayerControl : MonoBehaviour
         */
 
         //Jump
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && (isChanting == false))
         {
 
             
@@ -181,7 +187,7 @@ public class PlayerControl : MonoBehaviour
         */
 
         //Graviton Area
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X) && (isChanting == false))
         {
             if (isGravityAreaActive == true)
             {
@@ -192,9 +198,7 @@ public class PlayerControl : MonoBehaviour
             {
                 if (GroundCheck())
                 {
-                    isGravityAreaActive = true;
-                    gravitonArea.SetActive(true);
-                    gravitonArea.transform.position = this.transform.position;
+                    StartCoroutine("ChantingForGravityArea");
 
                 }
                 else return;
@@ -210,4 +214,20 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+
+    IEnumerator ChantingForGravityArea()
+    {
+        isChanting = true;
+        Character_animator.SetBool("Character_walking", false);
+        Character_animator.SetBool("Character_chanting", true);
+        yield return (new WaitForSeconds(2.0f));
+        isGravityAreaActive = true;
+        gravitonArea.SetActive(true);
+        gravitonArea.transform.position = this.transform.position;
+        yield return (new WaitForSeconds(1.0f));
+        isChanting = false;
+        Character_animator.SetBool("Character_walking", false);
+        Character_animator.SetBool("Character_chanting", false);
+        
+    }
 }

@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 114377691448341544}
   - component: {fileID: 114536650961578378}
   - component: {fileID: 212863970755136400}
+  - component: {fileID: 114588486729697020}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -729,7 +730,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1140025179940906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.78, y: 6.91, z: -0.1}
+  m_LocalPosition: {x: 4.12, y: 6.91, z: -0.1}
   m_LocalScale: {x: 0.2903437, y: 0.23410052, z: 0.6684432}
   m_Children:
   - {fileID: 4987533687630972}
@@ -924,7 +925,7 @@ Transform:
   m_GameObject: {fileID: 1265204892773878}
   m_LocalRotation: {x: -0, y: -0, z: 0.010112821, w: 0.99994886}
   m_LocalPosition: {x: -0, y: 0.32, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 4332687379200458}
   - {fileID: 4110229303451560}
@@ -1236,14 +1237,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.1
   jumpForce: 6
-  bulletSratingSpeed: 5
-  bullet: {fileID: 1709374088879600, guid: af4575c0d85b0134bb31abd96047d37d, type: 2}
-  CharacterSprite: {fileID: 4662843407831596}
-  bulletForce: 100
   FirePos: {fileID: 1117923977037626}
-  SEJump: {fileID: 1288007297598240}
+  gravitonAreaPrefab: {fileID: 1496250642022276, guid: 48d0a655cc04d6b43823c5e31a7dea30,
+    type: 2}
   Character_animator: {fileID: 95807524037490122}
+  CharacterSprite: {fileID: 4662843407831596}
+  SEJump: {fileID: 1288007297598240}
   gravity: {fileID: 114377691448341544}
+--- !u!114 &114588486729697020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1140025179940906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7d8e8cf48b24c4b8597e1e97a2fbcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravitonForce: 2
 --- !u!136 &136662596163754772
 CapsuleCollider:
   m_ObjectHideFlags: 1
