@@ -684,7 +684,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1140025179940906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.12, y: 6.91, z: -0.1}
+  m_LocalPosition: {x: 2.972, y: 6.91, z: -0.1}
   m_LocalScale: {x: 0.2903437, y: 0.23410052, z: 0.6684432}
   m_Children:
   - {fileID: 4987533687630972}
@@ -1122,20 +1122,20 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1140025179940906}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff7f11214078b244ea0c070671130e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.1
   jumpForce: 6
-  FirePos: {fileID: 1117923977037626}
   gravitonAreaPrefab: {fileID: 1496250642022276, guid: 48d0a655cc04d6b43823c5e31a7dea30,
     type: 2}
-  Character_animator: {fileID: 95807524037490122}
-  CharacterSprite: {fileID: 4662843407831596}
   SEJump: {fileID: 1288007297598240}
-  gravity: {fileID: 114377691448341544}
+  CharacterSprite: {fileID: 4662843407831596}
+  Character_animator: {fileID: 95807524037490122}
+  seJumpPS: {fileID: 198080297199257776}
+  rigidBody: {fileID: 54583728866672342}
 --- !u!114 &114588486729697020
 MonoBehaviour:
   m_ObjectHideFlags: 1

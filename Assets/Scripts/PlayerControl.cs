@@ -112,7 +112,9 @@ public class PlayerControl : MonoBehaviour
             {
                 isGrounded = false;   //Player's jumping now! cannot jump again
                 seJumpPS.Play();
+                rigidBody.velocity = Vector3.zero;
                 rigidBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+                
             }
         }
     }
@@ -144,11 +146,11 @@ public class PlayerControl : MonoBehaviour
         isChanting = true;
         Character_animator.SetBool("Character_walking", false);
         Character_animator.SetBool("Character_chanting", true);
-        yield return (new WaitForSeconds(2.0f));
+        yield return (new WaitForSeconds(1.2f));
         isGravityAreaActive = true;
         gravitonArea.SetActive(true);
         gravitonArea.transform.position = this.transform.position;
-        yield return (new WaitForSeconds(1.0f));
+        yield return (new WaitForSeconds(0.19f));
         isChanting = false;
         Character_animator.SetBool("Character_chanting", false);       
     }
