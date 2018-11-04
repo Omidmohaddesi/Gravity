@@ -19,8 +19,6 @@ public class PlayerControl : MonoBehaviour
     private GameObject gravitonArea;
     public Transform CharacterSprite;
 
-    public DialogueTrigger dialogueTrigger;
-    public DialogueManager dialogueManager;
     public Animator Character_animator;
     public ParticleSystem seJumpPS;
     public Rigidbody rigidBody;
@@ -52,10 +50,6 @@ public class PlayerControl : MonoBehaviour
         gravitonArea.SetActive(false);
 
         //start intro dialogue
-        if (!DialogueManager.dialogue_ended)
-        {
-            dialogueTrigger.TriggerDialogue();
-        }
     }
 
     void Update()

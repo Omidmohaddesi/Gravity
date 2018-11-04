@@ -3,48 +3,65 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogueManager : MonoBehaviour {
-    private Queue<string> sentences;
-    public Text dialogue_text;
-    static public bool dialogue_ended = false;
+public class DialogueManager : MonoBehaviour
+{
+    public Text dialogueText;
+    public Text Startgame;
+    public Animator animator;
 
-	// Use this for initialization
-	void Start () {
+    [HideInInspector]
+    public bool dialogue_ended;
+
+    private Queue<string> sentences;
+
+    // Use this for initialization
+    void Start()
+    {
         sentences = new Queue<string>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    } 
 
     public void StartDialogue(Dialogue dialogue)
     {
         dialogue_ended = false;
+        Startgame.enabled = false;
         sentences.Clear();
+        
         foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
         }
 
-        DispplayNextSentence();
+        DisplayNextSentence();       
     }
 
-    public void DispplayNextSentence()
+    public void DisplayNextSentence()
     {
-        if(sentences.Count==0)
+        if (sentences.Count == 0)
         {
-            EndDialogue();           
+            EndDialogue();
             return;
         }
 
         string sentence = sentences.Dequeue();
-        dialogue_text.text = sentence;
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(sentence));
     }
 
-    public void EndDialogue()
+    IEnumerator TypeSentence(string sentence)
     {
-        dialogue_text.text = "";
-        dialogue_ended = true;
+        dialogueText.text = "";
+        foreach (char letter in sentence.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return null;
+        }
     }
+
+    void EndDialogue()
+    {
+        dialogue_ended = true;
+        dialogueText.enabled = false;
+        animator.SetBool("dialogue_ended", true);
+    }
+
 }

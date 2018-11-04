@@ -741,7 +741,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.32
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -773,8 +773,8 @@ MonoBehaviour:
   Camera_dist: 5
   background: {fileID: 320769167}
   Target: {fileID: 882621906}
-  dialogueManager: {fileID: 1828639864}
   Curtain_animator: {fileID: 141346349}
+  dialogueManager: {fileID: 1828639864}
 --- !u!1001 &1157847280
 Prefab:
   m_ObjectHideFlags: 0
@@ -1434,7 +1434,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cd0960da9c340d40ae42a0e303840b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue_text: {fileID: 1959456435}
+  dialogueText: {fileID: 0}
+  Startgame: {fileID: 0}
+  animator: {fileID: 0}
+  dialogue_ended: 0
 --- !u!4 &1828639865
 Transform:
   m_ObjectHideFlags: 0
@@ -1892,9 +1895,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0b67add3c2ea194eb05d0256ab0287c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - "Where am I? What happened?\t\t"
-    - "Where are the others?\t\t\t"
-    - Got find a way out first.
-    name: Intro_dialogue
