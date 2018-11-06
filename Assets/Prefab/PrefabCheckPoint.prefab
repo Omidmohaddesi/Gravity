@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 4251239267545014}
   - component: {fileID: 212729851148725408}
   - component: {fileID: 65613081586151410}
+  - component: {fileID: 114840621228617978}
   m_Layer: 0
   m_Name: PrefabCheckPoint
   m_TagString: Untagged
@@ -61,7 +62,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4133600868715960
 Transform:
   m_ObjectHideFlags: 1
@@ -96,8 +97,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1770681227531114}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.976779, y: 0.76653004, z: 0}
-  m_LocalScale: {x: 0.4921115, y: 0.4921115, z: 0.4921115}
+  m_LocalPosition: {x: 23.11, y: 11.49, z: 0}
+  m_LocalScale: {x: 0.49210998, y: 0.49210998, z: 0.49210998}
   m_Children:
   - {fileID: 4133600868715960}
   m_Father: {fileID: 0}
@@ -115,6 +116,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.94, y: 4.63, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114840621228617978
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1770681227531114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8e52d631cbced14581258f64471b649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpecialEffect: {fileID: 1846807865986176}
 --- !u!198 &198044289461194156
 ParticleSystem:
   m_ObjectHideFlags: 1

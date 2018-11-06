@@ -301,13 +301,13 @@ AnimatorStateMachine:
     m_Position: {x: 324, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102410682393187250}
-    m_Position: {x: 324, y: 48, z: 0}
+    m_Position: {x: 216, y: 216, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102326102120204616}
     m_Position: {x: 576, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102106846182154910}
-    m_Position: {x: 336, y: 192, z: 0}
+    m_Position: {x: 456, y: 228, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Level_1_1_Sidan.unity
+- path: Assets/Scenes/LabScene.unity
   isLoaded: 1
   isActive: 1

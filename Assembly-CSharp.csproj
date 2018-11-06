@@ -65,10 +65,13 @@
     <Compile Include="Assets\Scripts\BoundartWall.cs" />
     <Compile Include="Assets\Scripts\BulletController.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\CheckPointControl.cs" />
+    <Compile Include="Assets\Scripts\Dangers.cs" />
     <Compile Include="Assets\Scripts\Dialogue\Dialogue.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueManager.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueTrigger.cs" />
     <Compile Include="Assets\Scripts\FireController.cs" />
+    <Compile Include="Assets\Scripts\FoeControl.cs" />
     <Compile Include="Assets\Scripts\GravitonEffect.cs" />
     <Compile Include="Assets\Scripts\Gravity.cs" />
     <Compile Include="Assets\Scripts\PlayerControl.cs" />

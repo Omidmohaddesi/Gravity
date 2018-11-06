@@ -1147,7 +1147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c7d8e8cf48b24c4b8597e1e97a2fbcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravitonForce: 2
+  gravitonForce: -9.8
 --- !u!136 &136662596163754772
 CapsuleCollider:
   m_ObjectHideFlags: 1

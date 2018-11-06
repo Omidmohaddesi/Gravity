@@ -69,9 +69,28 @@ public class PlayerControl : MonoBehaviour
 
     public bool GroundCheck()
     {
-        if (Physics.Raycast(transform.position, -Vector3.up, disToGround + 0.1f))
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, -Vector3.up, out hit, disToGround + 0.1f))
         {
-            return true;
+            if (hit.transform.gameObject.GetComponent<BoxCollider>().isTrigger == false)
+            {
+                return true;
+            }
+            else return false;
+        }
+        else return false;
+    }
+
+    public bool ChantCheck()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, -Vector3.up, out hit, disToGround + 0.1f))
+        {
+            if ((hit.transform.gameObject.GetComponent<BoxCollider>().isTrigger == false) && (hit.transform.gameObject.isStatic == true))
+            {
+                return true;
+            }
+            else return false;
         }
         else return false;
     }
@@ -131,7 +150,7 @@ public class PlayerControl : MonoBehaviour
             }
             else if (isGravityAreaActive == false)
             {
-                if (GroundCheck() && Input.GetAxis("Horizontal") == 0f)
+                if (ChantCheck() && Input.GetAxis("Horizontal") == 0f)
                 {
                     StartCoroutine("ChantingForGravityArea");
 
