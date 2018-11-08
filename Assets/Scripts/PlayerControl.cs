@@ -70,7 +70,8 @@ public class PlayerControl : MonoBehaviour
     public bool GroundCheck()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, -Vector3.up, out hit, disToGround + 0.1f))
+        if (Physics.Raycast(transform.position + Vector3.right * 0.5f, -Vector3.up, out hit, disToGround + 0.1f) 
+            || Physics.Raycast(transform.position - Vector3.right * 0.5f, -Vector3.up, out hit, disToGround + 0.1f)) 
         {
             if (hit.transform.gameObject.GetComponent<BoxCollider>().isTrigger == false)
             {

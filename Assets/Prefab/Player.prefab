@@ -98,11 +98,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4176871255640062}
   - component: {fileID: 136662596163754772}
-  - component: {fileID: 54583728866672342}
   - component: {fileID: 114377691448341544}
   - component: {fileID: 114536650961578378}
   - component: {fileID: 212863970755136400}
   - component: {fileID: 114588486729697020}
+  - component: {fileID: 54461802092276498}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -862,13 +862,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1257479153966306}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.15100002, y: 0.6399993, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.06684606, w: 0.99776334}
+  m_LocalPosition: {x: 0.078, y: 0.626, z: 0}
   m_LocalScale: {x: 0.31923053, y: 0.31923056, z: 0.31923056}
   m_Children: []
   m_Father: {fileID: 4000905930920182}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 7.6660004}
 --- !u!4 &4662843407831596
 Transform:
   m_ObjectHideFlags: 1
@@ -876,7 +876,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1265204892773878}
   m_LocalRotation: {x: -0, y: -0, z: 0.010112821, w: 0.99994886}
-  m_LocalPosition: {x: -0, y: 0.32, z: 0}
+  m_LocalPosition: {x: 0, y: 0.32, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 4332687379200458}
@@ -921,8 +921,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1262037576308072}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.24800123, y: 0.49799874, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.182, y: 0.517, z: 0}
   m_LocalScale: {x: 0.3399022, y: 0.33990216, z: 0.3399022}
   m_Children: []
   m_Father: {fileID: 4000905930920182}
@@ -998,7 +998,7 @@ Transform:
   m_Father: {fileID: 4000905930920182}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &54583728866672342
+--- !u!54 &54461802092276498
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1135,7 +1135,7 @@ MonoBehaviour:
   CharacterSprite: {fileID: 4662843407831596}
   Character_animator: {fileID: 95807524037490122}
   seJumpPS: {fileID: 198080297199257776}
-  rigidBody: {fileID: 54583728866672342}
+  rigidBody: {fileID: 54461802092276498}
 --- !u!114 &114588486729697020
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -8,6 +8,7 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText;
     public Text Startgame;
     public Animator animator;
+    public Canvas canvas;
 
     [HideInInspector]
     public bool dialogue_ended;
@@ -17,6 +18,7 @@ public class DialogueManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        canvas.gameObject.SetActive(true);
         sentences = new Queue<string>();
     } 
 

@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\BoundartWall.cs" />
     <Compile Include="Assets\Scripts\BulletController.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\CameraTriggerControl.cs" />
     <Compile Include="Assets\Scripts\CheckPointControl.cs" />
     <Compile Include="Assets\Scripts\Dangers.cs" />
     <Compile Include="Assets\Scripts\Dialogue\Dialogue.cs" />

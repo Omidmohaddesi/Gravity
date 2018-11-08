@@ -7,12 +7,37 @@ public class FoeControl : MonoBehaviour {
     public float speed = 0.1f;
     public float HP = 100.0f;
 
-    private int patrolDirection = 1;
+    private int patrolDirection = 1; // 1 face right, -1 face left, 0 keep current direction 
+    private float disToBound;
+    private float actualMoveDir = 1.0f;
 
-	void Start () {
-		
-	}
 
+    void Start () {
+        disToBound = GetComponent<Collider>().bounds.extents.x;
+    }
+
+    public int CollisionCheck()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.right, out hit, disToBound + 0.1f))
+        {
+            if (hit.transform.gameObject.tag != "Player")
+            {
+                return -1;
+            }
+            else return 0;
+        }
+        else if (Physics.Raycast(transform.position, Vector3.left, out hit, disToBound + 0.1f))
+        {
+            if (hit.transform.gameObject.tag != "Player")
+            {
+                return 1;
+            }
+            else return 0;
+        }
+        else return 0;
+    }
+    /*
     private void OnTriggerEnter(Collider other)
     {
         if ((other.isTrigger == false) )
@@ -27,7 +52,7 @@ public class FoeControl : MonoBehaviour {
             }
         }
   
-    }
+    }*/
 
     private void OnCollisionEnter(Collision coll)
     {
@@ -55,6 +80,11 @@ public class FoeControl : MonoBehaviour {
 
     private void patrol()
     {
-        transform.position += Vector3.right * patrolDirection * Time.deltaTime;
+        
+        if (CollisionCheck() != 0)
+        {
+            actualMoveDir = CollisionCheck();
+        }
+        transform.position += Vector3.right * actualMoveDir * Time.deltaTime;
     }
 }
