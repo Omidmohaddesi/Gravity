@@ -10,6 +10,7 @@ public class PlayerControl : MonoBehaviour
     [Header("Character Parameters")]
     public float speed = 0.5f;
     public float jumpForce = 3.0f;
+    public bool gravitonAbilityUnlocked = true;
     #endregion
 
     #region References
@@ -145,7 +146,7 @@ public class PlayerControl : MonoBehaviour
     public void Abilities()
     {
         //Graviton Area
-        if (Input.GetKeyDown(KeyCode.X) && (isChanting == false))
+        if (Input.GetKeyDown(KeyCode.X) && (isChanting == false) && gravitonAbilityUnlocked)
         {
             if (isGravityAreaActive == true)
             {

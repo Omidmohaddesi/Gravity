@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\InteractableController\FireController.cs" />
     <Compile Include="Assets\Scripts\InteractableController\FoeControl.cs" />
     <Compile Include="Assets\Scripts\InteractableController\GravitonEffect.cs" />
+    <Compile Include="Assets\Scripts\InteractableController\TriggerOfGraviton.cs" />
     <Compile Include="Assets\Scripts\InteractableController\WoodController.cs" />
     <Compile Include="Assets\Scripts\PlayerControl.cs" />
     <Compile Include="Assets\Scripts\SaveLoadManager.cs" />
