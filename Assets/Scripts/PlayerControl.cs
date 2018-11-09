@@ -58,20 +58,23 @@ public class PlayerControl : MonoBehaviour
         Animation();
         Abilities();
 
+
+        Debug.DrawRay((transform.position + Vector3.right * 0.3f), Vector3.down * (disToGround + 0.1f), Color.red);
+        Debug.DrawRay((transform.position - Vector3.right * 0.3f), Vector3.down * (disToGround + 0.1f), Color.red);
         //!!!!This is a debugging function!!!
         //Remove it when officiallt build!
         if (Input.GetKeyDown(KeyCode.R))
         {
-            Scene scene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(scene.name);
+            GameController.instance.ReloadScene();
         }
     }
 
     public bool GroundCheck()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position + Vector3.right * 0.5f, -Vector3.up, out hit, disToGround + 0.1f) 
-            || Physics.Raycast(transform.position - Vector3.right * 0.5f, -Vector3.up, out hit, disToGround + 0.1f)) 
+
+        if (Physics.Raycast(transform.position + Vector3.right * 0.3f, -Vector3.up, out hit, disToGround + 0.1f) 
+            || Physics.Raycast(transform.position - Vector3.right * 0.3f, -Vector3.up, out hit, disToGround + 0.1f)) 
         {
             if (hit.transform.gameObject.GetComponent<BoxCollider>().isTrigger == false)
             {

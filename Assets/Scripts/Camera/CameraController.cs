@@ -19,7 +19,7 @@ public class CameraController : MonoBehaviour
     #endregion 
     private void Start()
     {
-
+        this.transform.position = Target.transform.position;
     }
 
     // Update is called once per frame
@@ -35,9 +35,10 @@ public class CameraController : MonoBehaviour
         background.position = new Vector3(transform.position.x,transform.position.y,background.position.z);
     }
 
-    public void Zoom(float target_size,float zoom_speed)
+    public void Zoom(Transform _target,float _zoomspeed,float _camdist)
     {
-        Camera_dist = target_size;
-        ZoomSpeed = zoom_speed;
+        Target = _target;
+        FollowSpeed = _zoomspeed;
+        Camera_dist = _camdist;
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class GravitonEffect : MonoBehaviour {
 
     private Rigidbody rb;
-    public float gravitonForce = 2.0f;
+    public float gravitonForce = 1.0f;
 
     private void Start()
     {

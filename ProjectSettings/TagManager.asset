@@ -8,6 +8,7 @@ TagManager:
   - Fire
   - fire bullet
   - Graviton
+  - Cam_1
   layers:
   - Default
   - TransparentFX
