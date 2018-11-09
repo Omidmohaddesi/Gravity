@@ -11,7 +11,7 @@ public class BonfirController : MonoBehaviour {
     private Vector3 pos;
 
 	void Start () {
-        pos = transform.position;
+        
 	}
 
     private void OnTriggerEnter(Collider coll)
@@ -21,6 +21,7 @@ public class BonfirController : MonoBehaviour {
             if (!isInCD)
             {
                 isInCD = true;
+                pos = transform.position;
                 GameObject spawnedFire1 = Instantiate(createdFire, new Vector3(pos.x + 0.3f, pos.y, pos.z), Quaternion.identity);
                 spawnedFire1.GetComponent<Rigidbody>().velocity = Vector3.right * 0.7f;
                 GameObject spawnedFire2 = Instantiate(createdFire, new Vector3(pos.x - 0.3f, pos.y, pos.z), Quaternion.identity);

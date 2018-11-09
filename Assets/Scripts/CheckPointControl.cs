@@ -5,17 +5,21 @@ using UnityEngine;
 public class CheckPointControl : MonoBehaviour {
 
     public GameObject SpecialEffect;
-    private bool isCheckpointActivated = false;
+    public bool isCheckpointActivated = false;
 
 
     private void OnTriggerEnter(Collider other)
     {
-        SaveLoadManager.spawnLocation = this.transform.position;
-        if (isCheckpointActivated == false)
+        if (other.gameObject.tag == "Player")
         {
-            SpecialEffect.SetActive(true);
-            isCheckpointActivated = true;
-        }       
+            SaveLoadManager.spawnLocation = this.transform.position;
+            if (isCheckpointActivated == false)
+            {
+                SpecialEffect.SetActive(true);
+                isCheckpointActivated = true;
+            }
+        }
+      
     }
 
 
