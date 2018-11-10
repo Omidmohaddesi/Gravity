@@ -673,8 +673,9 @@ MonoBehaviour:
     - "Where am I?\t\t"
     - "What happened? Is everyone else alright?\t"
     - Got find a way out first!
-    name: 
+    name: Start_dialogue
     portrait: {fileID: 0}
+    dialogueFinished: 0
 --- !u!4 &276665053 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4757985237586600, guid: 5e652b04b5627624ab481f6060beda73,
@@ -1819,7 +1820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9669811, b: 0.9669811, a: 0}
+  m_Color: {r: 1, g: 0.9669811, b: 0.9669811, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2859,7 +2860,6 @@ MonoBehaviour:
   Camera_dist: 5
   background: {fileID: 320769167}
   Target: {fileID: 882621906}
-  Curtain_animator: {fileID: 141346349}
   dialogueManager: {fileID: 1828639864}
 --- !u!1 &1194446130
 GameObject:
@@ -5187,7 +5187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9669811, b: 0.9669811, a: 0}
+  m_Color: {r: 1, g: 0.9669811, b: 0.9669811, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

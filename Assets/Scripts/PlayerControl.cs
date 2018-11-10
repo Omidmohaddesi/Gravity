@@ -50,7 +50,6 @@ public class PlayerControl : MonoBehaviour
         gravitonArea = Instantiate(gravitonAreaPrefab, this.transform.position, Quaternion.identity);
         gravitonArea.SetActive(false);
 
-        //start intro dialogue
     }
 
     void Update()

@@ -18,7 +18,9 @@ public class DialogueManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        canvas.gameObject.SetActive(true);
+        if (!SaveLoadManager.StartDialogueFinished) {
+            canvas.gameObject.SetActive(true);
+        }
         sentences = new Queue<string>();
     } 
 
@@ -64,6 +66,7 @@ public class DialogueManager : MonoBehaviour
         dialogue_ended = true;
         dialogueText.enabled = false;
         animator.SetBool("dialogue_ended", true);
+
     }
 
 }

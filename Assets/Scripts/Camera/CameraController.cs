@@ -14,7 +14,6 @@ public class CameraController : MonoBehaviour
     #region reference
     public Transform background;
     public Transform Target;
-    public Animator Curtain_animator;
     public DialogueManager dialogueManager;
     #endregion 
     private void Start()

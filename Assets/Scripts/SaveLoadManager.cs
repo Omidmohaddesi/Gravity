@@ -9,6 +9,7 @@ public class SaveLoadManager : MonoBehaviour
 
     [HideInInspector]
     public static Vector3 spawnLocation = new Vector3(2,7,0);
+    public static bool StartDialogueFinished = false;
     void Awake()
     {
         if (!created)

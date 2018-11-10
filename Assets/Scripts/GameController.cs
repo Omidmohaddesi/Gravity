@@ -27,6 +27,13 @@ public class GameController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         playerControl.transform.position = SaveLoadManager.spawnLocation;
+
+
+        if (SaveLoadManager.StartDialogueFinished == true)
+        {
+            playerControl.enabled = true;
+            Camera.main.orthographicSize = 5f;
+        }
     }
 	
 	// Update is called once per frame
