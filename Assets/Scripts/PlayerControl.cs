@@ -11,7 +11,11 @@ public class PlayerControl : MonoBehaviour
     public float speed = 0.5f;
     public float jumpForce = 3.0f;
     public float pushForce = 1.0f;
-    public bool gravitonAbilityUnlocked = true;
+    public bool gravitonAreaUnlocked = true;    //whether she can use "X - GravitonArea" ability.
+    public bool gravitonForceUnlocked = false;  //whetehr she can use "Z - GravitonForce" ability.
+    public float gForceRadius = 3.0f;
+    public float gForceForce = 20.0f;
+    public float gForceCD = 5.0f;
     #endregion
 
     #region References
@@ -23,6 +27,8 @@ public class PlayerControl : MonoBehaviour
 
     public Animator Character_animator;
     public ParticleSystem seJumpPS;
+    public ParticleSystem seGravitonForcePS;
+    public GameObject seGForceReady;
     public Rigidbody rigidBody;
     #endregion
 
@@ -34,7 +40,9 @@ public class PlayerControl : MonoBehaviour
     private float disToSide;
 
     private bool isGrounded = true;
-    private bool isChanting = false;
+    private bool isChantingGravityArea = false;
+    private bool isChantingGravityForce = false;
+    private bool canChantGravityForce = true;
     #endregion
 
     #region old varaible initilization trash can
@@ -50,6 +58,10 @@ public class PlayerControl : MonoBehaviour
     {
         disToGround = GetComponent<Collider>().bounds.extents.y;
         disToSide = GetComponent<Collider>().bounds.extents.x;
+        if (gravitonForceUnlocked)
+        {
+            seGForceReady.SetActive(true);
+        }
 
         //instantiate gravitonArea for pernament use in this level.
         gravitonArea = Instantiate(gravitonAreaPrefab, this.transform.position, Quaternion.identity);
@@ -161,17 +173,17 @@ public class PlayerControl : MonoBehaviour
 
     public void Animation()
     {
-        if ((Input.GetAxis("Horizontal") > -0.1f) && Input.GetAxis("Horizontal") < 0.1f)
+        if (((Input.GetAxis("Horizontal") > 0.1f) || (Input.GetAxis("Horizontal") < -0.1f)) && (isChantingGravityArea == false) && (isChantingGravityForce == false))
         {
-            Character_animator.SetBool("Character_walking", false);
+            Character_animator.SetBool("Character_walking", true);
         }
-        else Character_animator.SetBool("Character_walking", true);
+        else Character_animator.SetBool("Character_walking", false);
     }
 
     public void Control()
     {
         //move character
-        if (isChanting == false)
+        if ((isChantingGravityArea == false) && (isChantingGravityForce == false))
         {
             if ((Input.GetAxis("Horizontal")) > 0f)
             {
@@ -193,17 +205,17 @@ public class PlayerControl : MonoBehaviour
         }
 
         //turn character
-        if ((Input.GetAxis("Horizontal") < 0f) && (isChanting == false))
+        if ((Input.GetAxis("Horizontal") < 0f) && (isChantingGravityArea == false))
         {
             CharacterSprite.localScale = new Vector3(1, CharacterSprite.localScale.y, CharacterSprite.localScale.z);
         }
-        if ((Input.GetAxis("Horizontal") > 0f) && (isChanting == false))
+        if ((Input.GetAxis("Horizontal") > 0f) && (isChantingGravityArea == false))
         {
             CharacterSprite.localScale = new Vector3(-1, CharacterSprite.localScale.y, CharacterSprite.localScale.z);
         }
 
         //Jump
-        if (Input.GetKeyDown(KeyCode.Space) && (isChanting == false))
+        if (Input.GetKeyDown(KeyCode.Space) && (isChantingGravityArea == false))
         {
             isGrounded = GroundCheck();
 
@@ -221,7 +233,7 @@ public class PlayerControl : MonoBehaviour
     public void Abilities()
     {
         //Graviton Area
-        if (Input.GetKeyDown(KeyCode.X) && (isChanting == false) && gravitonAbilityUnlocked)
+        if (Input.GetKeyDown(KeyCode.X) && (isChantingGravityArea == false) && (isChantingGravityForce == false) && (gravitonAreaUnlocked))
         {
             if (isGravityAreaActive == true)
             {
@@ -238,11 +250,23 @@ public class PlayerControl : MonoBehaviour
                 else return;
             }
         }
+
+        //Graviton Force
+        if (Input.GetKeyDown(KeyCode.Z) && (isChantingGravityArea == false) && (isChantingGravityForce == false) && (gravitonForceUnlocked))
+        {
+            if (canChantGravityForce)
+            {
+                StartCoroutine("ChantingForGravityForce");
+                StartCoroutine("GravityForceCD");
+            }
+            
+        }
+
     }
 
     IEnumerator ChantingForGravityArea()
     {
-        isChanting = true;
+        isChantingGravityArea = true;
         Character_animator.SetBool("Character_walking", false);
         Character_animator.SetBool("Character_chanting", true);
         yield return (new WaitForSeconds(1.2f));
@@ -250,30 +274,88 @@ public class PlayerControl : MonoBehaviour
         gravitonArea.SetActive(true);
         gravitonArea.transform.position = this.transform.position;
         yield return (new WaitForSeconds(0.19f));
-        isChanting = false;
+        isChantingGravityArea = false;
         Character_animator.SetBool("Character_chanting", false);
     }
 
-    #region old function trash can
-    //Gravity Energy Ball
-    /*
-    if (Input.GetKeyDown(KeyCode.X))
+    IEnumerator ChantingForGravityForce()
     {
+        //前摇
+        isChantingGravityForce = true;
+        
+        Character_animator.SetBool("Character_walking", false);
+        Character_animator.SetBool("Character_chanting", false);
+        Character_animator.SetBool("Character_chantingForce", true);
+        rigidBody.useGravity = false;
+        rigidBody.velocity = Vector3.zero;
+        yield return (new WaitForSeconds(0.65f));
 
-        Vector3 pos = FirePos.transform.position;
-        if (direction == Direction.right) // shoot bullet to the right
+        //原力效果
+        seGravitonForcePS.Play();
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, gForceRadius);
+        int i = 0;
+        while (i < hitColliders.Length)
         {
-            GameObject spawnedBullet = Instantiate(bullet, new Vector3(pos.x, pos.y, pos.z), Quaternion.identity);
-            spawnedBullet.GetComponent<Rigidbody>().velocity = Vector3.right * bulletSratingSpeed;
-
-
+            if ((hitColliders[i].isTrigger == false))
+            {
+                if (hitColliders[i].transform.gameObject.isStatic == false)
+                {
+                    Rigidbody hitRB = hitColliders[i].transform.gameObject.GetComponent<Rigidbody>();
+                    if (hitRB != null)
+                    {
+                        Vector3 v = hitRB.velocity;
+                        v = Vector3.zero;
+                        hitRB.velocity = v;
+                        hitRB.AddForce((hitColliders[i].transform.position - transform.position) * gForceForce, ForceMode.Impulse);
+                    }
+                }
+                
+            }
+            i++;
         }
-        else // shoot bullet to the left
-        {
-            GameObject spawnedBullet = Instantiate(bullet, new Vector3(pos.x, pos.y, pos.z), Quaternion.identity);
-            spawnedBullet.GetComponent<Rigidbody>().velocity = Vector3.left * bulletSratingSpeed;
-        }
+
+        //后摇
+        yield return (new WaitForSeconds(0.55f));
+        isChantingGravityForce = false;
+        rigidBody.useGravity = true;
+        rigidBody.velocity = Vector3.zero;
+        yield return (new WaitForSeconds(0.3f));
+        Character_animator.SetBool("Character_walking", false);
+        Character_animator.SetBool("Character_chanting", false);
+        Character_animator.SetBool("Character_chantingForce", false);
     }
-    */
-    #endregion
-}
+
+    IEnumerator GravityForceCD()
+    {
+        seGForceReady.SetActive(false);
+        canChantGravityForce = false;
+        yield return (new WaitForSeconds(gForceCD));
+        canChantGravityForce = true;
+        seGForceReady.SetActive(true);
+
+    }
+    
+
+        #region old function trash can
+        //Gravity Energy Ball
+        /*
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+
+            Vector3 pos = FirePos.transform.position;
+            if (direction == Direction.right) // shoot bullet to the right
+            {
+                GameObject spawnedBullet = Instantiate(bullet, new Vector3(pos.x, pos.y, pos.z), Quaternion.identity);
+                spawnedBullet.GetComponent<Rigidbody>().velocity = Vector3.right * bulletSratingSpeed;
+
+
+            }
+            else // shoot bullet to the left
+            {
+                GameObject spawnedBullet = Instantiate(bullet, new Vector3(pos.x, pos.y, pos.z), Quaternion.identity);
+                spawnedBullet.GetComponent<Rigidbody>().velocity = Vector3.left * bulletSratingSpeed;
+            }
+        }
+        */
+        #endregion
+    }
