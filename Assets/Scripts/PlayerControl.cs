@@ -63,7 +63,6 @@ public class PlayerControl : MonoBehaviour
         Animation();
         Abilities();
 
-
         Debug.DrawRay((transform.position + Vector3.right * 0.3f), Vector3.down * (disToGround + 0.1f), Color.red);
         Debug.DrawRay((transform.position - Vector3.right * 0.3f), Vector3.down * (disToGround + 0.1f), Color.red);
         Debug.DrawRay((transform.position + Vector3.up * 0.5f), Vector3.left * (disToSide + 0.07f), Color.blue);

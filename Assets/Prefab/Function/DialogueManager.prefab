@@ -20,6 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4360108683935422}
   - component: {fileID: 114233500120896100}
+  - component: {fileID: 114523561046008434}
+  - component: {fileID: 114283757781337700}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: Untagged
@@ -55,4 +57,50 @@ MonoBehaviour:
   Startgame: {fileID: 0}
   animator: {fileID: 0}
   canvas: {fileID: 0}
+  playerControl: {fileID: 0}
+  gameController: {fileID: 0}
+  Character_1: {fileID: 0}
+  Character_2: {fileID: 0}
   dialogue_ended: 0
+--- !u!114 &114283757781337700
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1666948495667854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a4e9d26ace656948a759e535c8c086c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+    sentences:
+    - Death Sentence 1
+    - Death Sentence 2
+    name: DeathConversation
+    portrait_1_talksfirst: {fileID: 21300000, guid: 670def33d67e33e4abad73a82cb5e4ce,
+      type: 3}
+    portrait_2: {fileID: 21300000, guid: e1ad95ec6383ade42bb4ee5a89a5443a, type: 3}
+  conversation_triggered: 0
+--- !u!114 &114523561046008434
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1666948495667854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c532439c96fbeee46ba979eadf54e507, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartingDialogue:
+    sentences:
+    - "StartSentence 1\t"
+    - "StartSentence 2\t"
+    - "StartSentence 3\t\t"
+    name: Starting_dialogue
+  DeathDialogue:
+    sentences:
+    - DeathSentence 1
+    - DeathSentence 2
+    name: Death_dialogue

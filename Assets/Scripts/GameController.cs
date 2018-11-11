@@ -23,27 +23,40 @@ public class GameController : MonoBehaviour {
     }
     #endregion
     public PlayerControl playerControl;
+    public ConversationTrigger conversationTrigger;
+
+    public bool readytoReload;
 
     // Use this for initialization
     void Start () {
+
+        ReadyForReloadedScene();
+
+    }
+	
+	// Update is called once per frame
+	void Update () {
+        if (readytoReload == true)
+        {
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
+        }
+	}
+
+    public void ReloadScene()
+    {
+        conversationTrigger.TriggerDeathConversation();
+
+    }
+
+    public void ReadyForReloadedScene()
+    {
         playerControl.transform.position = SaveLoadManager.spawnLocation;
-
-
         if (SaveLoadManager.StartDialogueFinished == true)
         {
             playerControl.enabled = true;
             Camera.main.orthographicSize = 5f;
         }
-    }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
-    public void ReloadScene()
-    {
-        Scene scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(scene.name);
     }
 }
