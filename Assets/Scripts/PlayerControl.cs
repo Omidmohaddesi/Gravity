@@ -10,6 +10,7 @@ public class PlayerControl : MonoBehaviour
     [Header("Character Parameters")]
     public float speed = 0.5f;
     public float jumpForce = 3.0f;
+    public float pushForce = 1.0f;
     public bool gravitonAbilityUnlocked = true;
     #endregion
 
@@ -30,6 +31,8 @@ public class PlayerControl : MonoBehaviour
     private bool isGravityAreaActive = false;
 
     private float disToGround;
+    private float disToSide;
+
     private bool isGrounded = true;
     private bool isChanting = false;
     #endregion
@@ -46,6 +49,8 @@ public class PlayerControl : MonoBehaviour
     void Start()
     {
         disToGround = GetComponent<Collider>().bounds.extents.y;
+        disToSide = GetComponent<Collider>().bounds.extents.x;
+
         //instantiate gravitonArea for pernament use in this level.
         gravitonArea = Instantiate(gravitonAreaPrefab, this.transform.position, Quaternion.identity);
         gravitonArea.SetActive(false);
@@ -61,6 +66,8 @@ public class PlayerControl : MonoBehaviour
 
         Debug.DrawRay((transform.position + Vector3.right * 0.3f), Vector3.down * (disToGround + 0.1f), Color.red);
         Debug.DrawRay((transform.position - Vector3.right * 0.3f), Vector3.down * (disToGround + 0.1f), Color.red);
+        Debug.DrawRay((transform.position + Vector3.up * 0.5f), Vector3.left * (disToSide + 0.07f), Color.blue);
+        Debug.DrawRay((transform.position + Vector3.down * 0.2f), Vector3.left * (disToSide + 0.07f), Color.blue);
         //!!!!This is a debugging function!!!
         //Remove it when officiallt build!
         if (Input.GetKeyDown(KeyCode.R))
@@ -69,12 +76,66 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+    public bool SideCheckLeft()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position + Vector3.up * 0.5f, Vector3.left, out hit, disToSide + 0.07f)
+         || Physics.Raycast(transform.position + Vector3.down * 0.2f, Vector3.left, out hit, disToSide + 0.07f))
+        {
+            if ((hit.transform.gameObject.GetComponent<Collider>().isTrigger == false))
+            {
+                if (hit.transform.gameObject.isStatic == false)
+                {
+                    Rigidbody hitRB = hit.transform.gameObject.GetComponent<Rigidbody>();
+                    if (hitRB != null)
+                    {
+                        Vector3 v = hitRB.velocity;
+                        v.x = 0f;
+                        hitRB.velocity = v;
+                        hitRB.AddForce(Vector3.left * pushForce, ForceMode.Impulse);
+                    }
+                }
+                return true;
+            }
+            else return false;
+        }
+        else return false;
+    }
+
+    public bool SideCheckRight()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position + Vector3.up * 0.5f, Vector3.right, out hit, disToSide + 0.07f)
+         || Physics.Raycast(transform.position + Vector3.down * 0.2f, Vector3.right, out hit, disToSide + 0.07f))
+        {
+            if ((hit.transform.gameObject.GetComponent<Collider>().isTrigger == false))
+            {
+                if (hit.transform.gameObject.isStatic == false)
+                {
+                    Rigidbody hitRB = hit.transform.gameObject.GetComponent<Rigidbody>();
+                    if (hitRB != null)
+                    {
+                        Vector3 v = hitRB.velocity;
+                        v.x = 0f;
+                        hitRB.velocity = v;
+                        hitRB.AddForce(Vector3.right * pushForce, ForceMode.Impulse);
+                    }
+                }
+                return true;
+            }
+            else return false;
+        }
+        else return false;
+    }
+
     public bool GroundCheck()
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position + Vector3.right * 0.3f, -Vector3.up, out hit, disToGround + 0.1f) 
-            || Physics.Raycast(transform.position - Vector3.right * 0.3f, -Vector3.up, out hit, disToGround + 0.1f)) 
+        if (Physics.Raycast(transform.position + Vector3.right * 0.3f, -Vector3.up, out hit, disToGround + 0.1f)
+            || Physics.Raycast(transform.position - Vector3.right * 0.3f, -Vector3.up, out hit, disToGround + 0.1f))
         {
             if (hit.transform.gameObject.GetComponent<BoxCollider>().isTrigger == false)
             {
@@ -113,7 +174,23 @@ public class PlayerControl : MonoBehaviour
         //move character
         if (isChanting == false)
         {
-            transform.position += Vector3.right * (Input.GetAxis("Horizontal")) * speed; 
+            if ((Input.GetAxis("Horizontal")) > 0f)
+            {
+                if (SideCheckRight() == false)
+                {
+                    //rigidBody.MovePosition((Vector3.right * (Input.GetAxis("Horizontal")) * speed) + rigidBody.position);
+                    transform.position += Vector3.right * (Input.GetAxis("Horizontal")) * speed;
+                }
+            }
+            else if ((Input.GetAxis("Horizontal")) < 0f)
+            {
+                if (SideCheckLeft() == false)
+                {
+                    //rigidBody.MovePosition((Vector3.right * (Input.GetAxis("Horizontal")) * speed) + rigidBody.position);
+                    transform.position += Vector3.right * (Input.GetAxis("Horizontal")) * speed;
+                }
+            }
+
         }
 
         //turn character
@@ -137,7 +214,7 @@ public class PlayerControl : MonoBehaviour
                 seJumpPS.Play();
                 rigidBody.velocity = Vector3.zero;
                 rigidBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-                
+
             }
         }
     }
@@ -175,7 +252,7 @@ public class PlayerControl : MonoBehaviour
         gravitonArea.transform.position = this.transform.position;
         yield return (new WaitForSeconds(0.19f));
         isChanting = false;
-        Character_animator.SetBool("Character_chanting", false);       
+        Character_animator.SetBool("Character_chanting", false);
     }
 
     #region old function trash can
