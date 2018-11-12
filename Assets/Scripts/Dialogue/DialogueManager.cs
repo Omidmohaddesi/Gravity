@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     public Text dialogueText;
+    public Text nameText;
     public Text Startgame;
     public Animator animator;
     public Canvas canvas;
@@ -19,18 +20,29 @@ public class DialogueManager : MonoBehaviour
     public bool dialogue_ended;
     private bool isConversation;
     private bool isDeathConversation;
+    bool inConversation;
 
     private Queue<string> sentences;
+    private Queue<Line> lines;
 
     // Use this for initialization
     void Start()
     {
         sentences = new Queue<string>();
+        lines = new Queue<Line>();
 
         if (!SaveLoadManager.StartDialogueFinished) {
             canvas.gameObject.SetActive(true);
         }
-    } 
+    }
+
+    private void Update()
+    {
+        if (inConversation && Input.GetKeyDown(KeyCode.Space))
+        {
+            DisplayNextLine();
+        }
+    }
 
     public void StartDialogue(Dialogue dialogue)
     {
@@ -49,43 +61,42 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
 
-        DisplayNextSentence();       
+        DisplayNextLine();       
     }
 
     public void StartConversation(Conversation conversation)
     {
+        inConversation = true;
         canvas.gameObject.SetActive(true);
         animator.SetBool("dialogue_ended", false);
         dialogue_ended = false;
         Startgame.enabled = false;
+        nameText.enabled = true;
         dialogueText.enabled = true;
         playerControl.enabled = false;
         sentences.Clear();
         isConversation = true;
 
-        if(conversation.name == "DeathConversation")
+        if (conversation.name == "DeathConversation")
         {
             isDeathConversation = true;
         }
 
-        Character_1.sprite = conversation.portrait_1_talksfirst;
-        Character_2.sprite = conversation.portrait_2;
-
-        foreach (string sentence in conversation.sentences)
+        foreach (Line line in conversation.lines)
         {
-            sentences.Enqueue(sentence);
+            lines.Enqueue(line);
         }
         
        
-        DisplayNextSentence();
-        Character_1.enabled = true;
+        DisplayNextLine();
+        //Character_1.enabled = true;
     }
 
-    public void DisplayNextSentence()
+    public void DisplayNextLine()
     {
         if (!isConversation)
         {
-            if (sentences.Count == 0)
+            if (lines.Count == 0)
             {
                 EndDialogue();
                 return;
@@ -94,7 +105,7 @@ public class DialogueManager : MonoBehaviour
 
         else
         {
-            if (sentences.Count == 0)
+            if (lines.Count == 0)
             {
                 Character_2.enabled = false;
                 Character_1.enabled = false;
@@ -102,22 +113,41 @@ public class DialogueManager : MonoBehaviour
                 return;
             }
 
-            if (Character_1.enabled == true)
-            {
-                Character_2.enabled = true;
-                Character_1.enabled = false;
-            }
+            //if (Character_1.enabled == true)
+            //{
+            //    Character_2.enabled = true;
+            //    Character_1.enabled = false;
+            //}
 
-            else 
-            {
-                Character_2.enabled = false;
-                Character_1.enabled = true;
-            }
+            //else 
+            //{
+            //    Character_2.enabled = false;
+            //    Character_1.enabled = true;
+            //}
 
         }
-        string sentence = sentences.Dequeue();
+        Line line = lines.Dequeue();
+
+        // Display the line
         StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+        StartCoroutine(TypeSentence(line.text));
+
+        // Display the name
+        nameText.text = line.name;
+
+        // Display the portrait
+        if (line.portraitPos == 1)
+        {
+            Character_1.enabled = true;
+            Character_2.enabled = false;
+            Character_1.sprite = line.portrait;
+        }
+        else if (line.portraitPos == 2)
+        {
+            Character_1.enabled = false;
+            Character_2.enabled = true;
+            Character_2.sprite = line.portrait;
+        }
     }
 
 
@@ -134,6 +164,8 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         dialogue_ended = true;
+        inConversation = false;
+        nameText.enabled = false;
         dialogueText.enabled = false;
         playerControl.enabled = true;
         animator.SetBool("dialogue_ended", true);

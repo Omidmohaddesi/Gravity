@@ -5,9 +5,17 @@ using UnityEngine;
 [System.Serializable]
 public class Conversation
 {
-    [TextArea(3, 10)]
-    public string[] sentences;
+    //[TextArea(3, 10)]
+    public Line[] lines;
     public string name;
-    public Sprite portrait_1_talksfirst;
-    public Sprite portrait_2;
+}
+
+[System.Serializable]
+public class Line
+{
+    public string name;
+    public string text;
+    public Sprite portrait;
+    public int portraitPos = 1;
+  
 }
