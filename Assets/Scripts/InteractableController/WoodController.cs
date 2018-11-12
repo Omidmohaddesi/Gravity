@@ -33,7 +33,7 @@ public class WoodController : MonoBehaviour {
     {
         if (coll.gameObject.tag == "GEB")
         {
-            Debug.Log("WOOD hits GEB!!!!");
+
             if (isGravityReversed == false)
             {
                 isGravityReversed = true;
@@ -49,7 +49,7 @@ public class WoodController : MonoBehaviour {
         //Hit by Fire
         if (coll.gameObject.tag == "Fire")
         {
-            Debug.Log("Fire hits GEB!!!!");
+
             Destroy(coll.gameObject);
             if (isIgnited == false)
             {

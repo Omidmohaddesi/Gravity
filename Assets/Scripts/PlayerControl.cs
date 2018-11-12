@@ -20,6 +20,10 @@ public class PlayerControl : MonoBehaviour
 
     #region References
     [Header("References")]
+    public GameObject spiritIris;
+    public GameObject spiritIrisPos;
+    private Vector3 spiritIrisDestinationPos;
+
     public GameObject gravitonAreaPrefab;
     public GameObject SEJump;
     private GameObject gravitonArea;
@@ -74,11 +78,12 @@ public class PlayerControl : MonoBehaviour
         Control();
         Animation();
         Abilities();
+        SpiritIris();
 
         Debug.DrawRay((transform.position + Vector3.right * 0.3f), Vector3.down * (disToGround + 0.1f), Color.red);
         Debug.DrawRay((transform.position - Vector3.right * 0.3f), Vector3.down * (disToGround + 0.1f), Color.red);
         Debug.DrawRay((transform.position + Vector3.up * 0.5f), Vector3.left * (disToSide + 0.07f), Color.blue);
-        Debug.DrawRay((transform.position + Vector3.down * 0.2f), Vector3.left * (disToSide + 0.07f), Color.blue);
+        Debug.DrawRay((transform.position + Vector3.down * 0.3f), Vector3.left * (disToSide + 0.07f), Color.blue);
         //!!!!This is a debugging function!!!
         //Remove it when officiallt build!
         if (Input.GetKeyDown(KeyCode.R))
@@ -92,7 +97,7 @@ public class PlayerControl : MonoBehaviour
         RaycastHit hit;
 
         if (Physics.Raycast(transform.position + Vector3.up * 0.5f, Vector3.left, out hit, disToSide + 0.07f)
-         || Physics.Raycast(transform.position + Vector3.down * 0.2f, Vector3.left, out hit, disToSide + 0.07f))
+         || Physics.Raycast(transform.position + Vector3.down * 0.3f, Vector3.left, out hit, disToSide + 0.07f))
         {
             if ((hit.transform.gameObject.GetComponent<Collider>().isTrigger == false))
             {
@@ -119,7 +124,7 @@ public class PlayerControl : MonoBehaviour
         RaycastHit hit;
 
         if (Physics.Raycast(transform.position + Vector3.up * 0.5f, Vector3.right, out hit, disToSide + 0.07f)
-         || Physics.Raycast(transform.position + Vector3.down * 0.2f, Vector3.right, out hit, disToSide + 0.07f))
+         || Physics.Raycast(transform.position + Vector3.down * 0.3f, Vector3.right, out hit, disToSide + 0.07f))
         {
             if ((hit.transform.gameObject.GetComponent<Collider>().isTrigger == false))
             {
@@ -230,6 +235,14 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+    public void SpiritIris()
+    {
+        float damping = 1.0f;
+        if (isGravityAreaActive == false) spiritIrisDestinationPos = spiritIrisPos.transform.position;
+        spiritIris.transform.position = Vector3.Lerp(spiritIris.transform.position, spiritIrisDestinationPos, Time.deltaTime * damping);
+
+    }
+
     public void Abilities()
     {
         //Graviton Area
@@ -269,11 +282,18 @@ public class PlayerControl : MonoBehaviour
         isChantingGravityArea = true;
         Character_animator.SetBool("Character_walking", false);
         Character_animator.SetBool("Character_chanting", true);
+
         yield return (new WaitForSeconds(1.2f));
+
         isGravityAreaActive = true;
         gravitonArea.SetActive(true);
         gravitonArea.transform.position = this.transform.position;
+
+        spiritIrisDestinationPos = this.transform.position + Vector3.up * 2.5f;
+
+
         yield return (new WaitForSeconds(0.19f));
+
         isChantingGravityArea = false;
         Character_animator.SetBool("Character_chanting", false);
     }
