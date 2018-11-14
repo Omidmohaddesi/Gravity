@@ -153,7 +153,7 @@ public class PlayerControl : MonoBehaviour
         if (Physics.Raycast(transform.position + Vector3.right * 0.3f, -Vector3.up, out hit, disToGround + 0.1f)
             || Physics.Raycast(transform.position - Vector3.right * 0.3f, -Vector3.up, out hit, disToGround + 0.1f))
         {
-            if (hit.transform.gameObject.GetComponent<BoxCollider>().isTrigger == false)
+            if (hit.transform.gameObject.GetComponent<Collider>().isTrigger == false)
             {
                 return true;
             }
@@ -167,7 +167,7 @@ public class PlayerControl : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, -Vector3.up, out hit, disToGround + 0.1f))
         {
-            if ((hit.transform.gameObject.GetComponent<BoxCollider>().isTrigger == false) && (hit.transform.gameObject.isStatic == true))
+            if ((hit.transform.gameObject.GetComponent<Collider>().isTrigger == false) && (hit.transform.gameObject.isStatic == true))
             {
                 return true;
             }
