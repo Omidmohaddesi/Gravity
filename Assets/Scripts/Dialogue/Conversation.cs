@@ -14,8 +14,10 @@ public class Conversation
 public class Line
 {
     public string name;
-    public string text;
     public Sprite portrait;
     public int portraitPos = 1;
+    [TextArea(3, 10)]
+    public string text;
+  
   
 }

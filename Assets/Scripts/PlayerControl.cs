@@ -237,9 +237,12 @@ public class PlayerControl : MonoBehaviour
 
     public void SpiritIris()
     {
-        float damping = 1.0f;
-        if (isGravityAreaActive == false) spiritIrisDestinationPos = spiritIrisPos.transform.position;
-        spiritIris.transform.position = Vector3.Lerp(spiritIris.transform.position, spiritIrisDestinationPos, Time.deltaTime * damping);
+        if (spiritIris != null)
+        {
+            if (isGravityAreaActive == false) spiritIrisDestinationPos = spiritIrisPos.transform.position;
+            spiritIris.transform.position = Vector3.Lerp(spiritIris.transform.position, spiritIrisDestinationPos, Time.deltaTime);
+        }
+
 
     }
 
