@@ -29,6 +29,12 @@ public class CameraController : MonoBehaviour
         this.GetComponent<Camera>().orthographicSize = Mathf.Lerp(this.GetComponent<Camera>().orthographicSize, Camera_dist, ZoomSpeed);
         //updating background xy but not z 
         background.position = new Vector3(transform.position.x,transform.position.y,background.position.z);
+        if (Target.tag != "Player")
+        {
+            background.localScale = Vector3.Lerp(background.localScale, new Vector3(2.4f,2.1f,1),0.01f);
+        }
+        else
+            background.localScale = Vector3.Lerp(background.localScale, new Vector3(1.6f, 1.4f, 1), 0.01f);
     }
 
     public void Zoom(Transform _target,float _zoomspeed,float _camdist)

@@ -6553,6 +6553,16 @@ Prefab:
       propertyPath: m_Center.x
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 114852040530291444, guid: d30ef632806c36b47ae3b709df815d46,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 882621906}
+    - target: {fileID: 114852040530291444, guid: d30ef632806c36b47ae3b709df815d46,
+        type: 2}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1146101977}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d30ef632806c36b47ae3b709df815d46, type: 2}
   m_IsPrefabAsset: 0
