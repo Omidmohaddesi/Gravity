@@ -38,5 +38,19 @@ public class SaveLoadManager : MonoBehaviour
             Camera.main.transform.position = player.position;
 
         }
+
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            player.position = checkpoints[3].position;
+            Camera.main.transform.position = player.position;
+
+        }
+
+        else if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            player.position = checkpoints[4].position;
+            Camera.main.transform.position = player.position;
+
+        }
     }
 }

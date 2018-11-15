@@ -3,23 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraTriggerControl : MonoBehaviour {
-    public Transform cam_1;
     public float cam_zoomspeed=0.2f;
     public float cam_dist = 8;
+    public Camera cam;
+    public Transform player;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Cam_1")
+        if (other.tag == "Player")
         {
-            Camera.main.gameObject.GetComponent<CameraController>().Zoom(cam_1.transform, cam_zoomspeed, cam_dist);
+            cam.GetComponent<CameraController>().Zoom(this.transform, cam_zoomspeed, cam_dist);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Cam_1")
+        if (other.tag == "Player")
         {
-            Camera.main.gameObject.GetComponent<CameraController>().Zoom(this.transform, 2f, 5f);
+            cam.GetComponent<CameraController>().Zoom(player.transform, 2f, 5f);
         }
     }
 

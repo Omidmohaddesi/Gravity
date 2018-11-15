@@ -26,10 +26,7 @@ public class CameraController : MonoBehaviour
     {
         temp = Vector2.Lerp(new Vector2(transform.position.x, transform.position.y), new Vector2(Target.position.x, Target.position.y), FollowSpeed * Time.deltaTime);
         transform.position = new Vector3(temp.x,temp.y,-10);
-
-        if (dialogueManager.dialogue_ended==true) {
-            Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, Camera_dist, ZoomSpeed);
-        }
+        this.GetComponent<Camera>().orthographicSize = Mathf.Lerp(this.GetComponent<Camera>().orthographicSize, Camera_dist, ZoomSpeed);
         //updating background xy but not z 
         background.position = new Vector3(transform.position.x,transform.position.y,background.position.z);
     }
