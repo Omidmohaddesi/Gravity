@@ -1272,7 +1272,7 @@ MonoBehaviour:
   pushForce: 1
   gravitonAreaUnlocked: 1
   gravitonForceUnlocked: 1
-  gForceRadius: 3
+  gForceRadius: 4.5
   gForceForce: 10
   gForceCD: 5
   spiritIris: {fileID: 0}
@@ -1297,9 +1297,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdf45a0f6a8501844a0d28d369daf111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam_1: {fileID: 0}
   cam_zoomspeed: 0.2
   cam_dist: 8
+  cam: {fileID: 0}
+  player: {fileID: 0}
 --- !u!136 &136662596163754772
 CapsuleCollider:
   m_ObjectHideFlags: 1
