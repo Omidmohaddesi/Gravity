@@ -15,7 +15,11 @@ public class CheckPointControl : MonoBehaviour {
             SaveLoadManager.spawnLocation = this.transform.position;
             if (isCheckpointActivated == false)
             {
-                SpecialEffect.SetActive(true);
+                if (SpecialEffect != null)
+                {
+                    SpecialEffect.SetActive(true);
+                }
+               
                 isCheckpointActivated = true;
             }
         }

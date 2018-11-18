@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ConversationTrigger : MonoBehaviour
 {
     public Conversation conversation;
-    static public bool conversation_triggered;
+    public bool conversation_triggered;
 
     public void OnTriggerEnter(Collider other)
     {

@@ -766,7 +766,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1140025179940906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.51, y: 6.96, z: -0.1}
+  m_LocalPosition: {x: 0.15, y: 6.83, z: -0.1}
   m_LocalScale: {x: 0.2903437, y: 0.23410052, z: 0.6684432}
   m_Children:
   - {fileID: 4987533687630972}
@@ -1262,16 +1262,16 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1140025179940906}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff7f11214078b244ea0c070671130e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.1
   jumpForce: 6
-  pushForce: 1
-  gravitonAreaUnlocked: 1
-  gravitonForceUnlocked: 1
+  pushForce: 2.5
+  gravitonAreaUnlocked: 0
+  gravitonForceUnlocked: 0
   gForceRadius: 4.5
   gForceForce: 10
   gForceCD: 5
