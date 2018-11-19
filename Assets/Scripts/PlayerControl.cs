@@ -49,12 +49,6 @@ public class PlayerControl : MonoBehaviour
     private bool canChantGravityForce = true;
     #endregion
 
-    #region old varaible initilization trash can
-    //public float bulletSratingSpeed = 5.0f;
-    //public GameObject bullet;
-    //public float bulletForce = 100.0f;
-    //public GameObject FirePos;
-    #endregion
 
 
     // Use this for initialization
@@ -362,27 +356,4 @@ public class PlayerControl : MonoBehaviour
 
     }
     
-
-        #region old function trash can
-        //Gravity Energy Ball
-        /*
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-
-            Vector3 pos = FirePos.transform.position;
-            if (direction == Direction.right) // shoot bullet to the right
-            {
-                GameObject spawnedBullet = Instantiate(bullet, new Vector3(pos.x, pos.y, pos.z), Quaternion.identity);
-                spawnedBullet.GetComponent<Rigidbody>().velocity = Vector3.right * bulletSratingSpeed;
-
-
-            }
-            else // shoot bullet to the left
-            {
-                GameObject spawnedBullet = Instantiate(bullet, new Vector3(pos.x, pos.y, pos.z), Quaternion.identity);
-                spawnedBullet.GetComponent<Rigidbody>().velocity = Vector3.left * bulletSratingSpeed;
-            }
-        }
-        */
-        #endregion
     }

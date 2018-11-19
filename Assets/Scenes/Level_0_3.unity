@@ -1593,18 +1593,6 @@ Prefab:
       propertyPath: m_Name
       value: 'Canvas '
       objectReference: {fileID: 0}
-    - target: {fileID: 1666026102795778, guid: 6c2955abaa2c5d44db0f5788e938b18d, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1443550546307970, guid: 6c2955abaa2c5d44db0f5788e938b18d, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1415166039199968, guid: 6c2955abaa2c5d44db0f5788e938b18d, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c2955abaa2c5d44db0f5788e938b18d, type: 2}
   m_IsPrefabAsset: 0
@@ -1648,6 +1636,12 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 95475999855149298, guid: 6c2955abaa2c5d44db0f5788e938b18d,
     type: 2}
   m_PrefabInternal: {fileID: 392752163}
+--- !u!114 &392752171 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114618128863335620, guid: 6c2955abaa2c5d44db0f5788e938b18d,
+    type: 2}
+  m_PrefabInternal: {fileID: 392752163}
+  m_Script: {fileID: 11500000, guid: 7b379549532dad7448e4188d9bc8cf2d, type: 3}
 --- !u!1001 &404640091
 Prefab:
   m_ObjectHideFlags: 0
@@ -3311,6 +3305,16 @@ Prefab:
       propertyPath: conversationTrigger
       value: 
       objectReference: {fileID: 346665419}
+    - target: {fileID: 114294819742160848, guid: 668b706baa895a346a299490fb6aa664,
+        type: 2}
+      propertyPath: fade
+      value: 
+      objectReference: {fileID: 392752171}
+    - target: {fileID: 114294819742160848, guid: 668b706baa895a346a299490fb6aa664,
+        type: 2}
+      propertyPath: saveLoadManager
+      value: 
+      objectReference: {fileID: 1984290504}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 668b706baa895a346a299490fb6aa664, type: 2}
   m_IsPrefabAsset: 0
@@ -8276,9 +8280,20 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 114682367435263846, guid: b498b1cfb766c374383c82d426b89f48,
+        type: 2}
+      propertyPath: fade
+      value: 
+      objectReference: {fileID: 392752171}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b498b1cfb766c374383c82d426b89f48, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &1984290504 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114682367435263846, guid: b498b1cfb766c374383c82d426b89f48,
+    type: 2}
+  m_PrefabInternal: {fileID: 1984290503}
+  m_Script: {fileID: 11500000, guid: b22db0075406e304bac2393c1911ec6f, type: 3}
 --- !u!1001 &1998016956
 Prefab:
   m_ObjectHideFlags: 0

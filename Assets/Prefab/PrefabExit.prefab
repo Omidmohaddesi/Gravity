@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4043605994799556}
   - component: {fileID: 212168718426730618}
   - component: {fileID: 65911281565400996}
-  - component: {fileID: 114542929721816460}
+  - component: {fileID: 114102114963928178}
   m_Layer: 0
   m_Name: PrefabExit
   m_TagString: Untagged
@@ -85,7 +85,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.94, y: 4.63, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114542929721816460
+--- !u!114 &114102114963928178
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,11 +93,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1102014792021640}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8e52d631cbced14581258f64471b649, type: 3}
+  m_Script: {fileID: 11500000, guid: 155c905189eee4a41854736333833d22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpecialEffect: {fileID: 0}
-  isCheckpointActivated: 0
+  saveLoadManager: {fileID: 0}
 --- !u!198 &198365369116293482
 ParticleSystem:
   m_ObjectHideFlags: 1

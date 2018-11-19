@@ -2325,6 +2325,12 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f557fe0daaa7fa04e8e67457ca68f580, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &542697877 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114618128863335620, guid: 6c2955abaa2c5d44db0f5788e938b18d,
+    type: 2}
+  m_PrefabInternal: {fileID: 2038677808}
+  m_Script: {fileID: 11500000, guid: 7b379549532dad7448e4188d9bc8cf2d, type: 3}
 --- !u!1001 &555801126
 Prefab:
   m_ObjectHideFlags: 0
@@ -4239,6 +4245,11 @@ Prefab:
       propertyPath: conversationTrigger
       value: 
       objectReference: {fileID: 1155531523}
+    - target: {fileID: 114294819742160848, guid: 668b706baa895a346a299490fb6aa664,
+        type: 2}
+      propertyPath: fade
+      value: 
+      objectReference: {fileID: 542697877}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 668b706baa895a346a299490fb6aa664, type: 2}
   m_IsPrefabAsset: 0

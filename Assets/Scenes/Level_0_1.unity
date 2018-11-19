@@ -1496,11 +1496,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114542929721816460, guid: eafa9a56b47a6f94395241dcebc427bb,
-        type: 2}
-      propertyPath: SpecialEffect
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eafa9a56b47a6f94395241dcebc427bb, type: 2}
   m_IsPrefabAsset: 0
@@ -1910,9 +1905,9 @@ Prefab:
       objectReference: {fileID: 448911240}
     - target: {fileID: 114294819742160848, guid: 668b706baa895a346a299490fb6aa664,
         type: 2}
-      propertyPath: readytoReload
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: fade
+      value: 
+      objectReference: {fileID: 1526755032}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 668b706baa895a346a299490fb6aa664, type: 2}
   m_IsPrefabAsset: 0
@@ -2964,6 +2959,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4985937299573440, guid: 586a7ebada7eab24dafc30c063053e97,
     type: 2}
   m_PrefabInternal: {fileID: 1468049869}
+--- !u!114 &1526755032 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114618128863335620, guid: 6c2955abaa2c5d44db0f5788e938b18d,
+    type: 2}
+  m_PrefabInternal: {fileID: 2007133834}
+  m_Script: {fileID: 11500000, guid: 7b379549532dad7448e4188d9bc8cf2d, type: 3}
 --- !u!4 &1529633619 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4875727917301546, guid: 610d7542447af15419f207fc48fd1657,
@@ -3716,6 +3717,11 @@ Prefab:
       propertyPath: checkpoints.Array.data[2]
       value: 
       objectReference: {fileID: 957588902}
+    - target: {fileID: 114682367435263846, guid: b498b1cfb766c374383c82d426b89f48,
+        type: 2}
+      propertyPath: fade
+      value: 
+      objectReference: {fileID: 1526755032}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b498b1cfb766c374383c82d426b89f48, type: 2}
   m_IsPrefabAsset: 0
@@ -3865,6 +3871,19 @@ Prefab:
     - target: {fileID: 1666026102795778, guid: 6c2955abaa2c5d44db0f5788e938b18d, type: 2}
       propertyPath: m_Name
       value: 'Canvas '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325822795146288, guid: 6c2955abaa2c5d44db0f5788e938b18d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114273217929447678, guid: 6c2955abaa2c5d44db0f5788e938b18d,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415166039199968, guid: 6c2955abaa2c5d44db0f5788e938b18d, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c2955abaa2c5d44db0f5788e938b18d, type: 2}

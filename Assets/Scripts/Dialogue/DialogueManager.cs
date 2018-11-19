@@ -68,7 +68,7 @@ public class DialogueManager : MonoBehaviour
     {
         inConversation = true;
         canvas.gameObject.SetActive(true);
-        animator.SetBool("dialogue_ended", false);
+        //animator.SetBool("dialogue_ended", false);
         dialogue_ended = false;
         Startgame.enabled = false;
         nameText.enabled = true;
@@ -168,7 +168,7 @@ public class DialogueManager : MonoBehaviour
         nameText.enabled = false;
         dialogueText.enabled = false;
         playerControl.enabled = true;
-        animator.SetBool("dialogue_ended", true);
+        //animator.SetBool("dialogue_ended", true);
         if (SaveLoadManager.StartDialogueFinished == false)
         {
             SaveLoadManager.StartDialogueFinished = true;

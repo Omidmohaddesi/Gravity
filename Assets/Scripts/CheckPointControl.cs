@@ -7,7 +7,6 @@ public class CheckPointControl : MonoBehaviour {
     public GameObject SpecialEffect;
     public bool isCheckpointActivated = false;
 
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -23,7 +22,6 @@ public class CheckPointControl : MonoBehaviour {
                 isCheckpointActivated = true;
             }
         }
-      
     }
 
 

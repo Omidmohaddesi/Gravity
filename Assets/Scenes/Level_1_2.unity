@@ -494,6 +494,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 107471870}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &107471877 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114618128863335620, guid: 6c2955abaa2c5d44db0f5788e938b18d,
+    type: 2}
+  m_PrefabInternal: {fileID: 107471870}
+  m_Script: {fileID: 11500000, guid: 7b379549532dad7448e4188d9bc8cf2d, type: 3}
 --- !u!1001 &114877597
 Prefab:
   m_ObjectHideFlags: 0
@@ -2295,6 +2301,11 @@ Prefab:
       propertyPath: conversationTrigger
       value: 
       objectReference: {fileID: 1524549585}
+    - target: {fileID: 114294819742160848, guid: 668b706baa895a346a299490fb6aa664,
+        type: 2}
+      propertyPath: fade
+      value: 
+      objectReference: {fileID: 107471877}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 668b706baa895a346a299490fb6aa664, type: 2}
   m_IsPrefabAsset: 0
