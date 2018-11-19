@@ -330,6 +330,10 @@ public class PlayerControl : MonoBehaviour
                         v = Vector3.zero;
                         hitRB.velocity = v;
                         hitRB.AddForce((hitColliders[i].transform.position - transform.position) * gForceForce, ForceMode.Impulse);
+                        if (hitRB.mass >= 5)
+                        {
+                            hitRB.AddForce((hitColliders[i].transform.position - transform.position) * gForceForce * 4f, ForceMode.Impulse);
+                        }
                     }
                 }
                 

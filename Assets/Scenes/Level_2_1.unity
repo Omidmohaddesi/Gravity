@@ -1109,6 +1109,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4081781723621780, guid: 93c8d87b0fc426147b40793056413372,
     type: 2}
   m_PrefabInternal: {fileID: 1870681114}
+--- !u!4 &368857221 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4008736279736598, guid: 22179fd20526c34499128c1f8c9efe09,
+    type: 2}
+  m_PrefabInternal: {fileID: 1679913455}
 --- !u!1001 &370849209
 Prefab:
   m_ObjectHideFlags: 0
@@ -1163,6 +1168,11 @@ Prefab:
     - target: {fileID: 1639929704972402, guid: 93c8d87b0fc426147b40793056413372, type: 2}
       propertyPath: m_Name
       value: PrefabWoodChest (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 54651334293000022, guid: 93c8d87b0fc426147b40793056413372,
+        type: 2}
+      propertyPath: m_Mass
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93c8d87b0fc426147b40793056413372, type: 2}
@@ -1221,6 +1231,11 @@ Prefab:
     - target: {fileID: 1639929704972402, guid: 93c8d87b0fc426147b40793056413372, type: 2}
       propertyPath: m_Name
       value: PrefabWoodChest (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 54651334293000022, guid: 93c8d87b0fc426147b40793056413372,
+        type: 2}
+      propertyPath: m_Mass
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93c8d87b0fc426147b40793056413372, type: 2}
@@ -1478,6 +1493,215 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4689827145665902, guid: 049d864d9ad9807469ab70634c0139fd,
     type: 2}
   m_PrefabInternal: {fileID: 408198660}
+--- !u!1001 &412419234
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1384406736}
+    m_Modifications:
+    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
+        type: 2}
+      propertyPath: conversation.lines.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -3.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -5.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.30057305
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
+        type: 2}
+      propertyPath: conversation.lines.Array.data[0].name
+      value: Gabriella
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
+        type: 2}
+      propertyPath: conversation.lines.Array.data[0].portrait
+      value: 
+      objectReference: {fileID: 21300000, guid: 670def33d67e33e4abad73a82cb5e4ce,
+        type: 3}
+    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
+        type: 2}
+      propertyPath: conversation.lines.Array.data[0].portraitPos
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
+        type: 2}
+      propertyPath: conversation.lines.Array.data[1].name
+      value: Alicia's Secret Notes
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
+        type: 2}
+      propertyPath: conversation.lines.Array.data[1].portrait
+      value: 
+      objectReference: {fileID: 21300000, guid: e1ad95ec6383ade42bb4ee5a89a5443a,
+        type: 3}
+    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
+        type: 2}
+      propertyPath: conversation.lines.Array.data[1].portraitPos
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
+        type: 2}
+      propertyPath: conversation.lines.Array.data[2].name
+      value: Alicia's Secret Notes
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
+        type: 2}
+      propertyPath: conversation.lines.Array.data[2].portrait
+      value: 
+      objectReference: {fileID: 21300000, guid: e1ad95ec6383ade42bb4ee5a89a5443a,
+        type: 3}
+    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
+        type: 2}
+      propertyPath: conversation.lines.Array.data[2].portraitPos
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
+        type: 2}
+      propertyPath: conversation.lines.Array.data[3].name
+      value: Gabriella
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
+        type: 2}
+      propertyPath: conversation.lines.Array.data[3].portrait
+      value: 
+      objectReference: {fileID: 21300000, guid: 670def33d67e33e4abad73a82cb5e4ce,
+        type: 3}
+    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
+        type: 2}
+      propertyPath: conversation.lines.Array.data[3].portraitPos
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
+        type: 2}
+      propertyPath: conversation.lines.Array.data[4].name
+      value: Iris
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
+        type: 2}
+      propertyPath: conversation.lines.Array.data[4].portrait
+      value: 
+      objectReference: {fileID: 21300000, guid: c92624b6595e7c6409b9f796c2f84e49,
+        type: 3}
+    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
+        type: 2}
+      propertyPath: conversation.lines.Array.data[4].portraitPos
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
+        type: 2}
+      propertyPath: conversation.lines.Array.data[0].text
+      value: "Another paragraph available. Let\u2019s see\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
+        type: 2}
+      propertyPath: conversation.lines.Array.data[1].text
+      value: " I ran to the secret garden which is protected by the ancient graviton
+        trees. But at that time, trees were all sleeping because of the cold weather.
+        I found a way in, but all the soldiers were after me. I set up a bunch of
+        barriers and puzzles to stop them, but they still came deeper and deeper\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
+        type: 2}
+      propertyPath: conversation.lines.Array.data[2].text
+      value: Then I came up with something. I have to pray to the ancient tree and
+        acquire the ultimate graviton mana. I know it is a forbidden power, but without
+        trapping those soldiers here forever, the academy will be at risk.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
+        type: 2}
+      propertyPath: conversation.lines.Array.data[3].text
+      value: "What did she want to do? Oh, I feel like...I don't want to know more...I
+        have a bad feeling. By the way, the puzzles are going hard and more dangerous,
+        I, I\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
+        type: 2}
+      propertyPath: conversation.lines.Array.data[4].text
+      value: "Alicia wanted you to know, that\u2019s why the notebook is in your hand.
+        She always faced the reality even if it sucks, right? Blood shared, courage
+        and perseverance are also shared. You can do it, daughter of the Gravity Bender. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
+        type: 2}
+      propertyPath: conversation.lines.Array.data[5].name
+      value: Gabriella
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
+        type: 2}
+      propertyPath: conversation.lines.Array.data[5].portrait
+      value: 
+      objectReference: {fileID: 21300000, guid: 670def33d67e33e4abad73a82cb5e4ce,
+        type: 3}
+    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
+        type: 2}
+      propertyPath: conversation.lines.Array.data[5].portraitPos
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
+        type: 2}
+      propertyPath: conversation.lines.Array.data[5].text
+      value: "I wish I had learned more in Tutor Phillips\u2019 classes\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
+        type: 2}
+      propertyPath: conversation.lines.Array.data[6].name
+      value: Iris
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
+        type: 2}
+      propertyPath: conversation.lines.Array.data[6].portrait
+      value: 
+      objectReference: {fileID: 21300000, guid: c92624b6595e7c6409b9f796c2f84e49,
+        type: 3}
+    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
+        type: 2}
+      propertyPath: conversation.lines.Array.data[6].portraitPos
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
+        type: 2}
+      propertyPath: conversation.lines.Array.data[6].text
+      value: Forget about Phillips or anything. The only one you should depend on
+        is yourself. Trust yourself, girl.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!4 &412419235 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 412419234}
 --- !u!1 &414484434
 GameObject:
   m_ObjectHideFlags: 0
@@ -3653,7 +3877,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4854923996045952, guid: d30ef632806c36b47ae3b709df815d46, type: 2}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 65141746817725298, guid: d30ef632806c36b47ae3b709df815d46,
         type: 2}
@@ -5145,6 +5369,16 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 114536650961578378, guid: e504cc02bbf1bc84c93a4412d34af173,
+        type: 2}
+      propertyPath: gravitonAreaUnlocked
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114536650961578378, guid: e504cc02bbf1bc84c93a4412d34af173,
+        type: 2}
+      propertyPath: gravitonForceUnlocked
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e504cc02bbf1bc84c93a4412d34af173, type: 2}
   m_IsPrefabAsset: 0
@@ -5382,6 +5616,7 @@ Transform:
   - {fileID: 1669717053}
   - {fileID: 1350100929}
   - {fileID: 1269428825}
+  - {fileID: 368857221}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5666,15 +5901,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4360108683935422, guid: 6174539e6158a0d4abc5e1bf985b358c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.9802053
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4360108683935422, guid: 6174539e6158a0d4abc5e1bf985b358c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 7.5826635
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4360108683935422, guid: 6174539e6158a0d4abc5e1bf985b358c, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -1.6171875
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4360108683935422, guid: 6174539e6158a0d4abc5e1bf985b358c, type: 2}
       propertyPath: m_LocalRotation.x
@@ -6689,6 +6924,11 @@ Prefab:
       propertyPath: m_Name
       value: PrefabWoodChest (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 54651334293000022, guid: 93c8d87b0fc426147b40793056413372,
+        type: 2}
+      propertyPath: m_Mass
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93c8d87b0fc426147b40793056413372, type: 2}
   m_IsPrefabAsset: 0
@@ -6848,6 +7088,35 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fe5af7d757602145bdaadc0b369dabb, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1384406735
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1384406736}
+  m_Layer: 0
+  m_Name: Dialogs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1384406736
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1384406735}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.646483, y: 13.034063, z: -0.30057305}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 412419235}
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1386877448
 Prefab:
   m_ObjectHideFlags: 0
@@ -6999,6 +7268,11 @@ Prefab:
     - target: {fileID: 1639929704972402, guid: 93c8d87b0fc426147b40793056413372, type: 2}
       propertyPath: m_Name
       value: PrefabWoodChest (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 54651334293000022, guid: 93c8d87b0fc426147b40793056413372,
+        type: 2}
+      propertyPath: m_Mass
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93c8d87b0fc426147b40793056413372, type: 2}
@@ -8078,7 +8352,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4854923996045952, guid: d30ef632806c36b47ae3b709df815d46, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 65141746817725298, guid: d30ef632806c36b47ae3b709df815d46,
         type: 2}
@@ -8263,36 +8537,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4396412476517166, guid: 1fe5af7d757602145bdaadc0b369dabb,
     type: 2}
   m_PrefabInternal: {fileID: 504967058}
---- !u!1 &1662385081
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1662385082}
-  m_Layer: 0
-  m_Name: ConversationTriggers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1662385082
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1662385081}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2014742073}
-  - {fileID: 2100135268}
-  m_Father: {fileID: 0}
-  m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1668725366
 Prefab:
   m_ObjectHideFlags: 0
@@ -8469,7 +8713,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1194446131}
     m_Modifications:
     - target: {fileID: 4008736279736598, guid: 22179fd20526c34499128c1f8c9efe09, type: 2}
       propertyPath: m_LocalPosition.x
@@ -8485,15 +8729,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4008736279736598, guid: 22179fd20526c34499128c1f8c9efe09, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4008736279736598, guid: 22179fd20526c34499128c1f8c9efe09, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4008736279736598, guid: 22179fd20526c34499128c1f8c9efe09, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4008736279736598, guid: 22179fd20526c34499128c1f8c9efe09, type: 2}
       propertyPath: m_LocalRotation.w
@@ -8501,7 +8745,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4008736279736598, guid: 22179fd20526c34499128c1f8c9efe09, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4008736279736598, guid: 22179fd20526c34499128c1f8c9efe09, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -8615,6 +8859,11 @@ Prefab:
     - target: {fileID: 4081781723621780, guid: 93c8d87b0fc426147b40793056413372, type: 2}
       propertyPath: m_LocalScale.y
       value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 54651334293000022, guid: 93c8d87b0fc426147b40793056413372,
+        type: 2}
+      propertyPath: m_Mass
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93c8d87b0fc426147b40793056413372, type: 2}
@@ -9540,6 +9789,77 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1211480823}
   m_Script: {fileID: 11500000, guid: 3cd0960da9c340d40ae42a0e303840b8, type: 3}
+--- !u!1001 &1832813405
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4854923996045952, guid: d30ef632806c36b47ae3b709df815d46, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 47.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854923996045952, guid: d30ef632806c36b47ae3b709df815d46, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 22.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854923996045952, guid: d30ef632806c36b47ae3b709df815d46, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.49363366
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854923996045952, guid: d30ef632806c36b47ae3b709df815d46, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854923996045952, guid: d30ef632806c36b47ae3b709df815d46, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854923996045952, guid: d30ef632806c36b47ae3b709df815d46, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854923996045952, guid: d30ef632806c36b47ae3b709df815d46, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854923996045952, guid: d30ef632806c36b47ae3b709df815d46, type: 2}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 65141746817725298, guid: d30ef632806c36b47ae3b709df815d46,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 8.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 65141746817725298, guid: d30ef632806c36b47ae3b709df815d46,
+        type: 2}
+      propertyPath: m_Center.x
+      value: -2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 65141746817725298, guid: d30ef632806c36b47ae3b709df815d46,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 11.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 114852040530291444, guid: d30ef632806c36b47ae3b709df815d46,
+        type: 2}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1146101977}
+    - target: {fileID: 114852040530291444, guid: d30ef632806c36b47ae3b709df815d46,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 882621906}
+    - target: {fileID: 1290259539883992, guid: d30ef632806c36b47ae3b709df815d46, type: 2}
+      propertyPath: m_Name
+      value: CameraTrigger_1 (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d30ef632806c36b47ae3b709df815d46, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &1834589628
 Prefab:
   m_ObjectHideFlags: 0
@@ -10471,7 +10791,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4234996462659794, guid: c8e3b7fb84a4f4343aab1c17b232aedb, type: 2}
       propertyPath: m_RootOrder
-      value: 16
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8e3b7fb84a4f4343aab1c17b232aedb, type: 2}
@@ -10482,219 +10802,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 2038677808}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
---- !u!1001 &2003702937
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1662385082}
-    m_Modifications:
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.sentences.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 2.47
-      objectReference: {fileID: 0}
-    - target: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 8.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 65205423384157988, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 97.88
-      objectReference: {fileID: 0}
-    - target: {fileID: 1167592762427964, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
-      propertyPath: m_Name
-      value: ConversationTrigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.045399997
-      objectReference: {fileID: 0}
-    - target: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.045399997
-      objectReference: {fileID: 0}
-    - target: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.045399997
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.sentences.Array.data[0]
-      value: Stan is a genius.
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.portrait_2
-      value: 
-      objectReference: {fileID: 21300000, guid: 670def33d67e33e4abad73a82cb5e4ce,
-        type: 3}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.portrait_1_talksfirst
-      value: 
-      objectReference: {fileID: 21300000, guid: 670def33d67e33e4abad73a82cb5e4ce,
-        type: 3}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.sentences.Array.data[1]
-      value: Stan is a genius.
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.sentences.Array.data[2]
-      value: Stan is a genius.
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.sentences.Array.data[3]
-      value: Stan is a genius.
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.sentences.Array.data[4]
-      value: Stan is a genius.
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[0].name
-      value: Gabriella
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[0].text
-      value: It becomes more dangerous. Why mom set the puzzles in the way to her
-        cabin? Is it... for preventing someone from tresspassing?
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[0].portrait
-      value: 
-      objectReference: {fileID: 21300000, guid: 670def33d67e33e4abad73a82cb5e4ce,
-        type: 3}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[0].portraitPos
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[1].portraitPos
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[1].name
-      value: Iris
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[1].text
-      value: It's never too much for us to be caureful for bad guys haha.
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[2].name
-      value: Gabriella
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[2].text
-      value: Hmmm, I just wonder from who mom was escaping from... but I don't know
-        if I can make it, with my limited knowledge against puzzles of the famous
-        Alicia, <color=#0000ff>Lady of Graviton</color>.
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[1].portrait
-      value: 
-      objectReference: {fileID: 21300000, guid: c92624b6595e7c6409b9f796c2f84e49,
-        type: 3}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[2].portrait
-      value: 
-      objectReference: {fileID: 21300000, guid: 670def33d67e33e4abad73a82cb5e4ce,
-        type: 3}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[2].portraitPos
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.name
-      value: C1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation_triggered
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[3].name
-      value: Iris
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[3].portrait
-      value: 
-      objectReference: {fileID: 21300000, guid: c92624b6595e7c6409b9f796c2f84e49,
-        type: 3}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[3].portraitPos
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[3].text
-      value: Forget about Alicia, Master of blablabla. The only thing you have to
-        do is to trust yourself.
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
-  m_IsPrefabAsset: 0
---- !u!4 &2014742073 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6,
-    type: 2}
-  m_PrefabInternal: {fileID: 2003702937}
 --- !u!1001 &2038677808
 Prefab:
   m_ObjectHideFlags: 0
@@ -10995,219 +11102,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4552239044436920, guid: b1ea474094dceb44390365397f9a8c3f,
     type: 2}
   m_PrefabInternal: {fileID: 260462691}
---- !u!1001 &2100135267
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1662385082}
-    m_Modifications:
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.sentences.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 54.72
-      objectReference: {fileID: 0}
-    - target: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 20.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 65205423384157988, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 97.88
-      objectReference: {fileID: 0}
-    - target: {fileID: 1167592762427964, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
-      propertyPath: m_Name
-      value: ConversationTrigger (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.045399997
-      objectReference: {fileID: 0}
-    - target: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.045399997
-      objectReference: {fileID: 0}
-    - target: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.045399997
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.sentences.Array.data[0]
-      value: Stan is a genius.
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.portrait_2
-      value: 
-      objectReference: {fileID: 21300000, guid: 670def33d67e33e4abad73a82cb5e4ce,
-        type: 3}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.portrait_1_talksfirst
-      value: 
-      objectReference: {fileID: 21300000, guid: 670def33d67e33e4abad73a82cb5e4ce,
-        type: 3}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.sentences.Array.data[1]
-      value: Stan is a genius.
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.sentences.Array.data[2]
-      value: Stan is a genius.
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.sentences.Array.data[3]
-      value: Stan is a genius.
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.sentences.Array.data[4]
-      value: Stan is a genius.
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[0].name
-      value: Gabriella
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[0].text
-      value: There is a graviton area ahead, without been activated by Graviton Gem
-        or anything.
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[0].portrait
-      value: 
-      objectReference: {fileID: 21300000, guid: 670def33d67e33e4abad73a82cb5e4ce,
-        type: 3}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[0].portraitPos
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[1].portraitPos
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[1].name
-      value: Iris
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[1].text
-      value: What's I am sure about is that there won't be a second graviton spirit
-        beside me. Maybe some kind of graviton chaos lives independently. Take care,
-        Gabriella.
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[2].name
-      value: Gabriella
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[2].text
-      value: I should calculate the timing very carefully now...
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[1].portrait
-      value: 
-      objectReference: {fileID: 21300000, guid: c92624b6595e7c6409b9f796c2f84e49,
-        type: 3}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[2].portrait
-      value: 
-      objectReference: {fileID: 21300000, guid: 670def33d67e33e4abad73a82cb5e4ce,
-        type: 3}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[2].portraitPos
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.name
-      value: C1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation_triggered
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[3].name
-      value: Iris
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[3].portrait
-      value: 
-      objectReference: {fileID: 21300000, guid: c92624b6595e7c6409b9f796c2f84e49,
-        type: 3}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[3].portraitPos
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114955005693941484, guid: b18e131283aa62c4382bc6743cff37b6,
-        type: 2}
-      propertyPath: conversation.lines.Array.data[3].text
-      value: Forget about Alicia, Master of blablabla. The only thing you have to
-        do is to trust yourself.
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
-  m_IsPrefabAsset: 0
---- !u!4 &2100135268 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4020741320585648, guid: b18e131283aa62c4382bc6743cff37b6,
-    type: 2}
-  m_PrefabInternal: {fileID: 2100135267}
 --- !u!1001 &2103516578
 Prefab:
   m_ObjectHideFlags: 0
@@ -11468,6 +11362,11 @@ Prefab:
     - target: {fileID: 1639929704972402, guid: 93c8d87b0fc426147b40793056413372, type: 2}
       propertyPath: m_Name
       value: PrefabWoodChest (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 54651334293000022, guid: 93c8d87b0fc426147b40793056413372,
+        type: 2}
+      propertyPath: m_Mass
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93c8d87b0fc426147b40793056413372, type: 2}
