@@ -20,6 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4239335876480054}
   - component: {fileID: 212293457661616996}
+  - component: {fileID: 54097777372684318}
+  - component: {fileID: 136494415311645800}
+  - component: {fileID: 114543688685729472}
   m_Layer: 0
   m_Name: BonfireSprite
   m_TagString: Untagged
@@ -35,8 +38,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4410431726075736}
-  - component: {fileID: 136150261141151982}
-  - component: {fileID: 114926560471404230}
   - component: {fileID: 65868362163875212}
   - component: {fileID: 114058934858099454}
   - component: {fileID: 54958630009847134}
@@ -100,7 +101,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1543310629995602}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 35.600002, y: 11.1, z: 0}
+  m_LocalPosition: {x: 34.57, y: 11.57, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 4490729103232106}
@@ -135,6 +136,21 @@ Transform:
   m_Father: {fileID: 4410431726075736}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!54 &54097777372684318
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1392500636641224}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!54 &54958630009847134
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -160,8 +176,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.24, y: 2.25, z: 3}
-  m_Center: {x: 0, y: -1.05, z: 0}
+  m_Size: {x: 4.24, y: 2.28, z: 3}
+  m_Center: {x: 0, y: -1.22, z: 0}
 --- !u!114 &114058934858099454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -174,12 +190,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravitonForce: -9.8
---- !u!114 &114926560471404230
+--- !u!114 &114543688685729472
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1543310629995602}
+  m_GameObject: {fileID: 1392500636641224}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 688a5d401adb9d740a1fc71ac813279e, type: 3}
@@ -187,20 +203,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   createdFire: {fileID: 1253947448853206, guid: de0d40f271cc860469264322e8d9fd42,
     type: 2}
-  emittingFireCD: 2
---- !u!136 &136150261141151982
+  emittingFireCD: 1
+--- !u!136 &136494415311645800
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1543310629995602}
+  m_GameObject: {fileID: 1392500636641224}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 1.01
-  m_Height: 2.36
+  m_Radius: 0.09
+  m_Height: 2.11
   m_Direction: 1
-  m_Center: {x: 0, y: 0.92, z: 0}
+  m_Center: {x: 0, y: -0.18, z: 0}
 --- !u!198 &198354026403946330
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -15,7 +15,11 @@ public class Portal_next_scene : MonoBehaviour {
 
     public void OnTriggerStay (Collider other)
     {
-        SaveLoadManager.spawnLocation = new Vector3(2, 7, 0);
-        gameController.LoadNextScene();
+        if (other.gameObject.tag == "Player")
+        {
+            SaveLoadManager.spawnLocation = new Vector3(2, 7, 0);
+            gameController.LoadNextScene();
+        }
+        
     }
 }
