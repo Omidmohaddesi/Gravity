@@ -16,10 +16,14 @@ public class GravitonEffect : MonoBehaviour {
         
         if (coll.gameObject.tag == "Graviton")
         {
-            Vector3 velo;
-            velo = rb.velocity;
-            velo.x = 0;
-            rb.velocity = velo;
+            if (this.gameObject.tag != "JadeCube")
+            {
+                Vector3 velo;
+                velo = rb.velocity;
+                velo.x = 0;
+                rb.velocity = velo;
+            }
+           
             rb.AddForce(Vector3.up * (gravitonForce + 9.8f) * rb.mass);
         }
     }

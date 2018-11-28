@@ -97,7 +97,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1770681227531114}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 23.11, y: 11.49, z: 0}
+  m_LocalPosition: {x: 2.3599997, y: 7.20653, z: 0}
   m_LocalScale: {x: 0.49210998, y: 0.49210998, z: 0.49210998}
   m_Children:
   - {fileID: 4133600868715960}
@@ -128,6 +128,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpecialEffect: {fileID: 1846807865986176}
+  isCheckpointActivated: 0
+  SE_Activate: {fileID: 1770982095938000, guid: 51108a94d67bd274ea38ebc3d84da33e,
+    type: 2}
 --- !u!198 &198044289461194156
 ParticleSystem:
   m_ObjectHideFlags: 1
