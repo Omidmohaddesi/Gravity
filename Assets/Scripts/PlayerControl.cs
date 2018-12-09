@@ -145,7 +145,8 @@ public class PlayerControl : MonoBehaviour
         RaycastHit hit;
 
         if (Physics.Raycast(transform.position + Vector3.right * 0.3f, -Vector3.up, out hit, disToGround + 0.1f)
-            || Physics.Raycast(transform.position - Vector3.right * 0.3f, -Vector3.up, out hit, disToGround + 0.1f))
+            || Physics.Raycast(transform.position - Vector3.right * 0.3f, -Vector3.up, out hit, disToGround + 0.1f) 
+            || Physics.Raycast(transform.position, -Vector3.up, out hit, disToGround + 0.1f))
         {
             if (hit.transform.gameObject.GetComponent<Collider>().isTrigger == false)
             {
@@ -315,7 +316,7 @@ public class PlayerControl : MonoBehaviour
         {
             if ((hitColliders[i].isTrigger == false))
             {
-                if (hitColliders[i].transform.gameObject.isStatic == false)
+                if ((hitColliders[i].transform.gameObject.isStatic == false) && (hitColliders[i].gameObject.tag != "Player"))
                 {
                     Rigidbody hitRB = hitColliders[i].transform.gameObject.GetComponent<Rigidbody>();
                     if (hitRB != null)
@@ -323,10 +324,11 @@ public class PlayerControl : MonoBehaviour
                         Vector3 v = hitRB.velocity;
                         v = Vector3.zero;
                         hitRB.velocity = v;
-                        hitRB.AddForce((hitColliders[i].transform.position - transform.position) * gForceForce, ForceMode.Impulse);
+                        hitRB.AddForce((hitColliders[i].transform.position - (transform.position + Vector3.down * 0.6f)) * gForceForce, ForceMode.Impulse);
+                        
                         if (hitRB.mass >= 5)
                         {
-                            hitRB.AddForce((hitColliders[i].transform.position - transform.position) * gForceForce * 4f, ForceMode.Impulse);
+                            hitRB.AddForce((hitColliders[i].transform.position - (transform.position + Vector3.down * 0.6f)) * gForceForce * 4f, ForceMode.Impulse);
                         }
                     }
                 }
