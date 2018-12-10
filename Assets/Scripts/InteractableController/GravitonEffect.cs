@@ -6,6 +6,7 @@ public class GravitonEffect : MonoBehaviour {
 
     private Rigidbody rb;
     public float gravitonForce = 1.0f;
+    public bool ifClearXVelocity = false;
 
     private void Start()
     {
@@ -16,7 +17,7 @@ public class GravitonEffect : MonoBehaviour {
         
         if (coll.gameObject.tag == "Graviton")
         {
-            if (this.gameObject.tag != "JadeCube")
+            if (ifClearXVelocity == true)
             {
                 Vector3 velo;
                 velo = rb.velocity;
