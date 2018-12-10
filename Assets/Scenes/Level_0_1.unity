@@ -432,9 +432,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
+  m_VerticalAxis: 
+  m_SubmitButton: 
+  m_CancelButton: 
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
@@ -1545,6 +1545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpecialEffect: {fileID: 0}
   isCheckpointActivated: 0
+  SE_Activate: {fileID: 0}
 --- !u!65 &690846186
 BoxCollider:
   m_ObjectHideFlags: 0

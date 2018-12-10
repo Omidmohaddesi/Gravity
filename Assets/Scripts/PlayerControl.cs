@@ -78,6 +78,7 @@ public class PlayerControl : MonoBehaviour
         Debug.DrawRay((transform.position - Vector3.right * 0.3f), Vector3.down * (disToGround + 0.1f), Color.red);
         Debug.DrawRay((transform.position + Vector3.up * 0.5f), Vector3.left * (disToSide + 0.07f), Color.blue);
         Debug.DrawRay((transform.position + Vector3.down * 0.3f), Vector3.left * (disToSide + 0.07f), Color.blue);
+        Debug.DrawRay((transform.position), Vector3.down * 0.7f, Color.blue);
         //!!!!This is a debugging function!!!
         //Remove it when officiallt build!
         if (Input.GetKeyDown(KeyCode.R))
@@ -159,10 +160,10 @@ public class PlayerControl : MonoBehaviour
         else return false;
     }
 
-    public bool ChantCheck()
+    public bool ChantCheck() //BIG Problem: Will GO WRONG AFTER BUILDING!!!!!
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, -Vector3.up, out hit, disToGround + 0.1f))
+        if (Physics.Raycast(transform.position, -Vector3.up, out hit, 0.7f))
         {
             if ((hit.transform.gameObject.GetComponent<Collider>().isTrigger == false) && (hit.transform.gameObject.isStatic == true))
             {
@@ -245,9 +246,17 @@ public class PlayerControl : MonoBehaviour
 
     public void Abilities()
     {
+        
+        ////debug!!!!
+        //if (Input.GetButtonDown("X"))
+        //{
+        //    transform.position = transform.position + Vector3.up * 3.0f;
+        //}
+        
         //Graviton Area
-        if (Input.GetKeyDown(KeyCode.X) && (isChantingGravityArea == false) && (isChantingGravityForce == false) && (gravitonAreaUnlocked))
+        if ((Input.GetButtonDown("X")) && (isChantingGravityArea == false) && (isChantingGravityForce == false) && (gravitonAreaUnlocked))
         {
+            
             if (isGravityAreaActive == true)
             {
                 isGravityAreaActive = false;
@@ -255,17 +264,19 @@ public class PlayerControl : MonoBehaviour
             }
             else if (isGravityAreaActive == false)
             {
-                if (ChantCheck() && Input.GetAxis("Horizontal") == 0f)
+                
+                if (ChantCheck() && (Input.GetAxis("Horizontal") < 0.1f && Input.GetAxis("Horizontal") > -0.1f))
                 {
+                    
                     StartCoroutine("ChantingForGravityArea");
-
+             
                 }
                 else return;
             }
         }
 
         //Graviton Force
-        if (Input.GetKeyDown(KeyCode.Z) && (isChantingGravityArea == false) && (isChantingGravityForce == false) && (gravitonForceUnlocked))
+        if ((Input.GetButtonDown("Z")) && (isChantingGravityArea == false) && (isChantingGravityForce == false) && (gravitonForceUnlocked))
         {
             if (canChantGravityForce)
             {
@@ -279,6 +290,7 @@ public class PlayerControl : MonoBehaviour
 
     IEnumerator ChantingForGravityArea()
     {
+        
         isChantingGravityArea = true;
         Character_animator.SetBool("Character_walking", false);
         Character_animator.SetBool("Character_chanting", true);
