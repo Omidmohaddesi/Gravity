@@ -300,12 +300,12 @@ public class PlayerControl : MonoBehaviour
         isGravityAreaActive = true;
         gravitonArea.SetActive(true);
         gravitonArea.transform.position = this.transform.position;
-
+        gravitonArea.transform.GetComponent<Collider>().enabled = false;
         spiritIrisDestinationPos = this.transform.position + Vector3.up * 2.5f;
 
 
         yield return (new WaitForSeconds(0.19f));
-
+        gravitonArea.transform.GetComponent<Collider>().enabled = true;
         isChantingGravityArea = false;
         Character_animator.SetBool("Character_chanting", false);
     }
