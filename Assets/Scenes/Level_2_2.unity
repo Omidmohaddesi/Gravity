@@ -17970,6 +17970,10 @@ Prefab:
       propertyPath: conversation.lines.Array.data[16].text
       value: (Iris leaves. Graviton Area ability disabled.)
       objectReference: {fileID: 0}
+    - target: {fileID: 1167592762427964, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
+      propertyPath: m_TagString
+      value: EndScene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b18e131283aa62c4382bc6743cff37b6, type: 2}
   m_IsPrefabAsset: 0

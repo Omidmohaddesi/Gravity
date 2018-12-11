@@ -9,6 +9,7 @@ TagManager:
   - Graviton
   - Cam_1
   - JadeCube
+  - EndScene
   layers:
   - Default
   - TransparentFX

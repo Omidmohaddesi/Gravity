@@ -26,6 +26,7 @@ public class GameController : MonoBehaviour {
     public SaveLoadManager saveLoadManager;
     public bool readytoReload;
     public Fade fade;
+    public bool EndingScene;
 
     // Use this for initialization
     void Start () {

@@ -371,5 +371,12 @@ public class PlayerControl : MonoBehaviour
         seGForceReady.SetActive(true);
 
     }
-    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "EndScene")
+        {
+            GameController.instance.EndingScene = true;
+        }
     }
+}
