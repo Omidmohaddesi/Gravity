@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4985937299573440}
   - component: {fileID: 65177258238535354}
   - component: {fileID: 212063824882361310}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Obstacle_Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}

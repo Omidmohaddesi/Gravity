@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4881691774732178}
   - component: {fileID: 65578446842613420}
   - component: {fileID: 212373259625366392}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Obstacle_TinyBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}

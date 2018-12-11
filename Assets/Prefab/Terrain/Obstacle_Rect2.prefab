@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4367722914166212}
   - component: {fileID: 65752005965792332}
   - component: {fileID: 212724153149871588}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Obstacle_Rect2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -163,9 +163,9 @@ public class PlayerControl : MonoBehaviour
     public bool ChantCheck() //BIG Problem: Will GO WRONG AFTER BUILDING!!!!!
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, -Vector3.up, out hit, 0.7f))
+        if (Physics.Raycast(transform.position, -Vector3.up, out hit, disToGround+0.1f))
         {
-            if ((hit.transform.gameObject.GetComponent<Collider>().isTrigger == false) && (hit.transform.gameObject.isStatic == true))
+            if ((hit.transform.gameObject.GetComponent<Collider>().isTrigger == false) && (hit.transform.gameObject.layer == 8))
             {
                 return true;
             }
