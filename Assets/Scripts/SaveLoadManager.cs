@@ -22,7 +22,7 @@ public class SaveLoadManager : MonoBehaviour
 
     private void Update()
     {
-        Teleport();
+        //Teleport();
     }
 
     public void Teleport()
@@ -93,7 +93,7 @@ public class SaveLoadManager : MonoBehaviour
         else if (SceneManager.GetActiveScene().name == "Level_1_2")
             Load2_1();
         else if (SceneManager.GetActiveScene().name == "Level_2_1")
-            Load0_1();        
+            Load2_2();        
     }
 
     public void ReloadCurrentScene()
@@ -133,6 +133,11 @@ public class SaveLoadManager : MonoBehaviour
     public void Load2_1()
     {
         SceneManager.LoadScene("Level_2_1");
+    }
+
+    public void Load2_2()
+    {
+        SceneManager.LoadScene("Level_2_2");
     }
     #endregion
 }

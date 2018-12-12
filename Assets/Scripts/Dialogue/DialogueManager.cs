@@ -16,6 +16,13 @@ public class DialogueManager : MonoBehaviour
     public Image Character_1;
     public Image Character_2;
 
+    //These are for the hardcode of endingGame
+    public EndGame endGame;
+    public RawImage endGameBlack;
+    public RawImage endGameImage;
+    private bool blackLerpBegin = false;
+    private bool imageLerpBegin = false;
+
     [HideInInspector]
     public bool dialogue_ended;
     private bool isConversation;
@@ -42,6 +49,19 @@ public class DialogueManager : MonoBehaviour
         {
             DisplayNextLine();
         }
+
+        if (blackLerpBegin)
+        {
+            Color temp = endGameBlack.color;
+            endGameBlack.color = Vector4.Lerp(temp, new Color(temp.r, temp.g, temp.b, 1), 0.02f);
+        }
+        if (imageLerpBegin)
+        {
+            Color temp = endGameImage.color;
+            endGameImage.color = Vector4.Lerp(temp, new Color(temp.r, temp.g, temp.b, 1), 0.01f);
+        }
+
+
     }
 
     public void StartDialogue(Dialogue dialogue)
@@ -61,7 +81,7 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
 
-        DisplayNextLine();       
+        DisplayNextLine();
     }
 
     public void StartConversation(Conversation conversation)
@@ -86,8 +106,8 @@ public class DialogueManager : MonoBehaviour
         {
             lines.Enqueue(line);
         }
-        
-       
+
+
         DisplayNextLine();
         //Character_1.enabled = true;
     }
@@ -174,10 +194,26 @@ public class DialogueManager : MonoBehaviour
             SaveLoadManager.StartDialogueFinished = true;
         }
 
+        //Endgame Hardcode
+        if (endGame.isFinalDiaglogueTriggered == true)
+        {
+            playerControl.enabled = false;
+            StartCoroutine("EndGameImageGo");
+        }
+
         if (isDeathConversation)
         {
             gameController.readytoReload = true;
         }
     }
+    IEnumerator EndGameImageGo()
+    {
+        yield return new WaitForSeconds(1.0f);
+        blackLerpBegin = true;
+        yield return new WaitForSeconds(3.0f);
+        imageLerpBegin = true;
+    }
 
 }
+
+
