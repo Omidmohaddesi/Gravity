@@ -39,6 +39,7 @@ public class GameController : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        
         if (readytoReload == true && fade.fadeOutCompleted)
         { 
            saveLoadManager.ReloadCurrentScene();
@@ -53,6 +54,7 @@ public class GameController : MonoBehaviour {
     public void ReloadScene()
     {
         fade.FadeOut();
+        readytoReload = true;
         conversationTrigger.TriggerDeathConversation();
         playerControl.enabled = false;
     }

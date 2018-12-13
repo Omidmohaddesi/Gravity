@@ -99,8 +99,7 @@ public class SaveLoadManager : MonoBehaviour
     public void ReloadCurrentScene()
     {
         Scene scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(scene.name);
-        
+        SceneManager.LoadScene(scene.name);       
     }
 
     #region Helper function

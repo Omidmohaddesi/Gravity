@@ -6,13 +6,27 @@ public class BonfirController : MonoBehaviour {
 
     public GameObject createdFire;
     public float emittingFireCD = 2.0f;
-
+    private float distance;
     private bool isInCD = false;
     private Vector3 pos;
 
 	void Start () {
         
 	}
+
+    private void Update()
+    {
+        distance = Vector3.Distance(this.transform.position, GameController.instance.playerControl.transform.position);
+        if (distance > 15)
+        {
+            this.GetComponent<AudioSource>().volume = 0;
+        }
+        else
+        {
+            this.GetComponent<AudioSource>().volume = 1 - (distance / 15);
+
+        }
+    }
 
     private void OnTriggerEnter(Collider coll)
     {
